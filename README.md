@@ -6,7 +6,7 @@ As the SAS Business Data Network (BDN) can be:
 * imported from XML or CSV file but
 * exported only to CSV file,
 
-I developed bdn2csv to transform an XML Export file into the equivalent CSV Import file:
+I developed bdn2csv to transform an XML Export file into an equivalent CSV Import file:
 
 * for a user to edit it as a spreadsheet
 
