@@ -6,7 +6,7 @@ As a SAS Business Data Network (BDN) Import file is XML or CSV but an Export fil
 
 * For a user to edit it as a spreadshit
 
-* For a developer to process it as a table programmatically
+* For a developer to programmatically process it as a table
 
 and to import the resulting CSV file into SAS BDN
 
