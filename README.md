@@ -1,6 +1,6 @@
 # bdn2csv
 
-bdn2csv is a Python tool to convert SAS Business Data Network (BDN) XML Export file to CSV Import file
+bdn2csv is a Python parser to convert SAS Business Data Network (BDN) XML Export file to CSV Import file
 
 As the SAS Business Data Network (BDN) can be:
 * imported from XML or CSV file, but
