@@ -14,4 +14,4 @@ I developed bdn2csv to transform an XML Export file into an equivalent CSV Impor
 
 and to import the result CSV file into SAS BDN.
 
-(WIP - More to be added!)
+(More to be added!)
