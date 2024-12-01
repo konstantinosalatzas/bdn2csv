@@ -53,7 +53,7 @@ class BDN:
         
         return (std_attrs + non_std_attrs)
     
-    def parse_values(self) -> dict[str, list[list[str]]]:
+    def parse_values(self) -> dict[str, list[str]]:
         xml = self.xml
         std_attrs = self.std_attrs
         non_std_attrs = self.non_std_attrs
