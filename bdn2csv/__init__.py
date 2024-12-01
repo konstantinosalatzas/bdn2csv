@@ -3,7 +3,7 @@ import pandas as pd
 import xml.etree.ElementTree as et
 import codecs
 
-def convert(xml_path, csv_path):
+def convert(xml_path: str, csv_path: str) -> pd.DataFrame:
     csv_name = csv_path.split("/")[-1].split(".")[0]
     csv_folder_path = "/".join(csv_path.split("/")[:-1])
     temp_csv_path = csv_folder_path+"/"+csv_name+" - temp.csv"
