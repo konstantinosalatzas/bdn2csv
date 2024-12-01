@@ -7,7 +7,7 @@ class BDN:
         self.dict = {} # dictionary of lists BDN representation
         self.df = df # DataFrame BDN representation
     
-    def parse_types(self):
+    def parse_types(self) -> list[str]:
         xml = self.xml
         types = self.types
         std_attrs = self.std_attrs
@@ -50,8 +50,10 @@ class BDN:
                         non_std_attrs.append("Tags")
                     if (r.attrib['type'] == "BDNTERMREF") and ("Related Terms" not in non_std_attrs): # Related Terms
                         non_std_attrs.append("Related Terms")
+        
+        return (std_attrs + non_std_attrs)
     
-    def parse_values(self):
+    def parse_values(self) -> dict[str, list[list[str]]]:
         xml = self.xml
         std_attrs = self.std_attrs
         non_std_attrs = self.non_std_attrs
@@ -119,3 +121,5 @@ class BDN:
                             values['Related Terms'] += r.attrib['identity']
                 for a in non_std_attrs:
                     bdn[a].append(values[a])
+        
+        return bdn
