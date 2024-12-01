@@ -1,7 +1,6 @@
 from bdn2csv.BDN import BDN
 import pandas as pd
 import xml.etree.ElementTree as et
-import codecs
 
 def convert(xml_path: str, csv_path: str) -> pd.DataFrame:
     csv_name = csv_path.split("/")[-1].split(".")[0]
@@ -18,7 +17,7 @@ def convert(xml_path: str, csv_path: str) -> pd.DataFrame:
     bdn.df = bdn.df.sort_values(by=['Path'])
 
     bdn.df.to_csv(temp_csv_path, index=False, encoding='utf-8')
-    with codecs.open(temp_csv_path, 'r', encoding='utf-8') as rf, codecs.open(csv_path, 'w', encoding='utf-8') as wf:
+    with open(temp_csv_path, 'r', encoding='utf-8') as rf, open(csv_path, 'w', encoding='utf-8') as wf:
         for line in rf:
             line = line.replace("Type_", "Type") # Handle the case when "Type" appears in standard AND non-standard attributes
             wf.write(line)
