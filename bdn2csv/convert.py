@@ -15,11 +15,11 @@ def convert(xml_path: str, csv_path: str) -> pd.DataFrame:
 
     bdn.df.to_csv(temp_csv_path, index=False, encoding='utf-8')
     with open(temp_csv_path, 'r', encoding='utf-8') as rf, open(csv_path, 'w', encoding='utf-8') as wf:
+        is_first_line = True
         for line in rf:
-            line = line.replace("Type_", "Type") # Handle the case when "Type" appears in standard AND non-standard attributes
-            wf.write(line)
-            break
-        for line in rf:
+            if is_first_line:
+                line = line.replace("Type_", "Type") # Handle the case when "Type" appears in standard AND non-standard attributes
+                is_first_line = False
             line = line.replace('"""', '"') # Replace (""") with (") in quotation
             wf.write(line)
 
