@@ -1,11 +1,14 @@
+import pandas as pd
+import xml.etree.ElementTree as et
+
 class BDN:
-    def __init__(self, xml, df):
-        self.xml = xml
+    def __init__(self, xml_path: str):
+        self.xml = et.parse(xml_path)
         self.types = [] # list of unique types of attributes
         self.std_attrs = ["Name", "Path"] # list of unique standard attrbiutes
         self.non_std_attrs = [] # list of unique non-standard attributes
         self.dict = {} # dictionary of lists BDN representation
-        self.df = df # DataFrame BDN representation
+        self.df = pd.DataFrame() # DataFrame BDN representation
     
     def parse_types(self) -> list[str]:
         xml = self.xml

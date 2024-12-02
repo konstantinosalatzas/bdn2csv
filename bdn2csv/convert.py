@@ -7,10 +7,7 @@ def convert(xml_path: str, csv_path: str) -> pd.DataFrame:
     csv_folder_path = "/".join(csv_path.split("/")[:-1])
     temp_csv_path = csv_folder_path+"/"+csv_name+" - temp.csv"
 
-    xml = et.parse(xml_path)
-    df = pd.DataFrame()
-
-    bdn = BDN(xml, df)
+    bdn = BDN(xml_path)
     bdn.parse_types()
     bdn.parse_values()
     bdn.df = pd.DataFrame(bdn.dict)
