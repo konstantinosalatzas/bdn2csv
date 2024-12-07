@@ -31,7 +31,7 @@ class TestParseValues(unittest.TestCase):
         bdn.parse_types()
         bdn.parse_values()
         df_out = bdn.df # Output DataFrame
-        df_out = df_out.reset_index(drop=True).rename(columns={"Type_": "Type"}) # when "Type" is in standard AND non-standard attributes
+        df_out = df_out.rename(columns={"Type_": "Type"}) # when "Type" is in standard AND non-standard attributes
         if "Description" in df_out.columns.tolist():
             df_out['Description'] = df_out['Description'].apply(lambda x: str(x).strip('"'))
         df_ans = pd.read_csv("/workspaces/bdn2csv/data/Import.csv", dtype=object, keep_default_na=False) # Expected DataFrame

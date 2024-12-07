@@ -126,4 +126,5 @@ class BDN:
         
         self.df = pd.DataFrame(bdn)
         self.df = self.df.sort_values(by=['Path'])
+        self.df = self.df.reset_index(drop=True)
         return self.df
