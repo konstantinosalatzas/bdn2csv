@@ -24,5 +24,8 @@ class TestParseTypes(unittest.TestCase):
         list_ans = [attr.replace("Type.1", "Type") for attr in list_ans] # the case when "Type" in in standard AND non-standard attributes
         self.assertListEqual(list_out, list_ans)
 
+class TestParseValues(unittest.TestCase):
+    pass
+
 if __name__ == "__main__":
     unittest.main()
