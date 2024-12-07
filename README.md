@@ -6,10 +6,10 @@ As the SAS BDN can be:
 * imported from XML or CSV file but
 * exported only to XML file,
 
-I developed bdn2csv to transform an XML Export file into an equivalent CSV Import file:
+bdn2csv transforms an XML Export file into an equivalent CSV Import file:
 
 * for a user to edit it as a spreadsheet
 
-* for a developer to programmatically process it as a table
+* for a programmer to process it as a table
 
 and to import the result CSV file into SAS BDN.
