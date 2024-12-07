@@ -7,10 +7,10 @@ class TestConvert(unittest.TestCase):
         xml_path = "/workspaces/bdn2csv/data/Export.xml"
         csv_path = "/workspaces/bdn2csv/data/Test.csv"
         bdn2csv.convert(xml_path, csv_path)
-        out = pd.read_csv(csv_path) # Output DataFrame
-        ans = pd.read_csv("/workspaces/bdn2csv/data/Import.csv") # Expected DataFrame
-        cmp = out.compare(ans)
-        self.assertEqual(len(cmp.index), 0)
+        df_out = pd.read_csv(csv_path) # Output DataFrame
+        df_ans = pd.read_csv("/workspaces/bdn2csv/data/Import.csv") # Expected DataFrame
+        df_cmp = df_out.compare(df_ans)
+        self.assertEqual(len(df_cmp.index), 0)
 
 class TestParseTypes(unittest.TestCase):
     def test_parse_types(self):
