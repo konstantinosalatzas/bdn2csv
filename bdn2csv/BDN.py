@@ -27,7 +27,7 @@ class BDN:
                                 std_attrs.append("Type_")
                         else:
                             std_attrs.append(attribute.attrib['name'])
-                if resource.find("Dependencies"):
+                if resource.find("Dependencies") is not None:
                     has_tag_or_ref = False
                     dep = None
                     for dependency in resource.find("Dependencies").findall("dependency"):
@@ -80,7 +80,7 @@ class BDN:
                         else:
                             bdn[attribute.attrib['name']].append(attribute.attrib['value'])
                 # Parse non-standard attribute values
-                if resource.find("Dependencies"):
+                if resource.find("Dependencies") is not None:
                     has_tag_or_ref = False
                     dep = None
                     for dependency in resource.find("Dependencies").findall("dependency"):
