@@ -7,7 +7,6 @@ class BDN:
         self.types = [] # list of unique types of attributes
         self.std_attrs = ["Name", "Path"] # list of unique standard attrbiutes
         self.non_std_attrs = [] # list of unique non-standard attributes
-        self.dict = {} # dictionary of lists BDN representation
         self.df = pd.DataFrame() # DataFrame BDN representation
     
     def parse_types(self) -> list[str]:
@@ -60,7 +59,7 @@ class BDN:
         xml = self.xml
         std_attrs = self.std_attrs
         non_std_attrs = self.non_std_attrs
-        bdn = self.dict
+        bdn = {}
         for a in (std_attrs + non_std_attrs):
             bdn[a] = []
         
