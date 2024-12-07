@@ -7,7 +7,6 @@ class BDN:
         self.types = [] # list of unique types of attributes
         self.std_attrs = ["Name", "Path"] # list of unique standard attrbiutes
         self.non_std_attrs = [] # list of unique non-standard attributes
-        self.dict = {} # dictionary of lists BDN representation
         self.df = pd.DataFrame() # DataFrame BDN representation
     
     def parse_types(self) -> list[str]:
@@ -56,11 +55,11 @@ class BDN:
         
         return (std_attrs + non_std_attrs)
     
-    def parse_values(self) -> dict[str, list[str]]:
+    def parse_values(self) -> pd.DataFrame:
         xml = self.xml
         std_attrs = self.std_attrs
         non_std_attrs = self.non_std_attrs
-        bdn = self.dict
+        bdn = {}
         for a in (std_attrs + non_std_attrs):
             bdn[a] = []
         
@@ -125,4 +124,6 @@ class BDN:
                 for a in non_std_attrs:
                     bdn[a].append(values[a])
         
-        return bdn
+        self.df = pd.DataFrame(bdn)
+        self.df = self.df.sort_values(by=['Path'])
+        return self.df
