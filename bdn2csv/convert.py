@@ -10,8 +10,6 @@ def convert(xml_path: str, csv_path: str) -> BDN:
     bdn = BDN(xml_path)
     bdn.parse_types()
     bdn.parse_values()
-    bdn.df = pd.DataFrame(bdn.dict)
-    bdn.df = bdn.df.sort_values(by=['Path'])
 
     bdn.df.to_csv(temp_csv_path, index=False, encoding='utf-8')
     with open(temp_csv_path, 'r', encoding='utf-8') as rf, open(csv_path, 'w', encoding='utf-8') as wf:

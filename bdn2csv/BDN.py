@@ -56,7 +56,7 @@ class BDN:
         
         return (std_attrs + non_std_attrs)
     
-    def parse_values(self) -> dict[str, list[str]]:
+    def parse_values(self) -> pd.DataFrame:
         xml = self.xml
         std_attrs = self.std_attrs
         non_std_attrs = self.non_std_attrs
@@ -125,4 +125,6 @@ class BDN:
                 for a in non_std_attrs:
                     bdn[a].append(values[a])
         
-        return bdn
+        self.df = pd.DataFrame(bdn)
+        self.df = self.df.sort_values(by=['Path'])
+        return self.df

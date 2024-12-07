@@ -30,8 +30,7 @@ class TestParseValues(unittest.TestCase):
         bdn = bdn2csv.BDN(xml_path)
         bdn.parse_types()
         bdn.parse_values()
-        dict_out = bdn.dict # Output dictionary
-        df_out = pd.DataFrame.from_dict(dict_out) # Output DataFrame
+        df_out = bdn.df # Output DataFrame
         df_out = df_out.rename(columns={"Type_": "Type", "Type": "Type.1"}) # the case then "Type" is in standard AND non-standard attributes
         df_ans = pd.read_csv("/workspaces/bdn2csv/data/Import.csv") # Expected DataFrame
         df_cmp = df_out.compare(df_ans)
