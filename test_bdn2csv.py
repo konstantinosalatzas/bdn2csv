@@ -6,7 +6,7 @@ class TestConvert(unittest.TestCase):
     def test_convert(self):
         xml_path = "/workspaces/bdn2csv/data/Export.xml"
         csv_path = "/workspaces/bdn2csv/data/Test.csv"
-        df = bdn2csv.convert(xml_path, csv_path)
+        bdn2csv.convert(xml_path, csv_path)
         out = pd.read_csv(csv_path) # Output DataFrame
         ans = pd.read_csv("/workspaces/bdn2csv/data/Import.csv") # Expected DataFrame
         cmp = out.compare(ans)

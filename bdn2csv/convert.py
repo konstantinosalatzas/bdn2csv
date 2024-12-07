@@ -2,7 +2,7 @@ from bdn2csv.BDN import BDN
 import pandas as pd
 import xml.etree.ElementTree as et
 
-def convert(xml_path: str, csv_path: str) -> pd.DataFrame:
+def convert(xml_path: str, csv_path: str) -> BDN:
     csv_name = csv_path.split("/")[-1].split(".")[0]
     csv_folder_path = "/".join(csv_path.split("/")[:-1])
     temp_csv_path = csv_folder_path+"/"+csv_name+" - temp.csv"
@@ -23,4 +23,4 @@ def convert(xml_path: str, csv_path: str) -> pd.DataFrame:
             line = line.replace('"""', '"') # Replace (""") with (") in quotation
             wf.write(line)
 
-    return bdn.df
+    return bdn
