@@ -93,7 +93,7 @@ class BDN:
                         bdn[a].append("")
                     continue
                 values = {}
-                # Handle multiple values per attribute
+                # Handle multi-valued attributes
                 for a in non_std_attrs:
                     values[a] = ""
                 if dep != None:
