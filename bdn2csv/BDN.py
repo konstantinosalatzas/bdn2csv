@@ -20,7 +20,7 @@ class BDN:
             if resource.attrib['type'] == "BDNTERM":
                 for attribute in resource.find("Attributes").findall("attribute"): # standard attributes
                     if attribute.attrib['name'] not in std_attrs:
-                        # Handle the case when "Type" appears in standard AND non-standard attributes
+                        # Handle the case when "Type" is in standard AND non-standard attributes
                         if attribute.attrib['name'] == "Type":
                             if "Type_" not in std_attrs:
                                 std_attrs.append("Type_")
@@ -73,7 +73,7 @@ class BDN:
                     if attribute.attrib['name'] == "Description":
                         bdn[attribute.attrib['name']].append("\""+attribute.attrib['value']+"\"")
                     else:
-                        # Handle the case when "Type" appears in standard AND non-standard attributes
+                        # Handle the case when "Type" is in standard AND non-standard attributes
                         if attribute.attrib['name'] == "Type":
                             bdn["Type_"].append(attribute.attrib['value'])
                         else:

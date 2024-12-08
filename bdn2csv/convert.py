@@ -16,9 +16,9 @@ def convert(xml_path: str, csv_path: str) -> BDN:
         is_first_line = True
         for line in rf:
             if is_first_line:
-                line = line.replace("Type_", "Type") # Handle the case when "Type" appears in standard AND non-standard attributes
+                line = line.replace("Type_", "Type") # when "Type" is in standard AND non-standard attributes
                 is_first_line = False
-            line = line.replace('"""', '"') # Replace (""") with (") in quotation
+            line = line.replace('"""', '"') # Replace (""") with (") quotation
             wf.write(line)
 
     return bdn
