@@ -11,7 +11,6 @@ parser.add_argument("csv_path", type=str,
 args = parser.parse_args()
 xml_path = args.xml_path
 csv_path = args.csv_path
-print(xml_path, csv_path)
 
 bdn2csv.convert(xml_path, csv_path)
 
