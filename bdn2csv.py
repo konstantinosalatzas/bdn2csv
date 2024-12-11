@@ -8,8 +8,7 @@ parser.add_argument("xml_path", type=str,
                     help="XML Export file path")
 parser.add_argument("csv_path", type=str,
                     help="CSV Import file path")
-parser.add_argument("-v", "--verbose", action="store_true",
-                    help="Output verbosity")
+parser.add_argument("-v", "--verbose", action="store_true")
 args = parser.parse_args()
 
 xml_path = args.xml_path
