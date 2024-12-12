@@ -13,3 +13,11 @@ bdn2csv transforms an XML Export file into an equivalent CSV Import file:
 * for a developer to process it programmatically as a table
 
 and to import the result CSV file into SAS BDN.
+
+## Usage
+
+### As a module
+
+## As a CLI
+
+### Installation
