@@ -18,6 +18,6 @@ and to import the result CSV file into SAS BDN.
 
 ### As a module
 
-## As a CLI
+### As a CLI
 
-### Installation
+## Installation
