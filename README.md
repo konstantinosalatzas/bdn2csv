@@ -20,12 +20,18 @@ and to import the result CSV file into SAS BDN.
 
 Example:
 
-```python
+```py
 import bdn2csv
 
 bdn2csv.convert(xml_path="Export.xml", csv_path="Import.csv")
 ```
 
 ### As a CLI
+
+Example:
+
+```sh
+python bdn2csv.py "Export.xml" "Import.csv"
+```
 
 ## Installation
