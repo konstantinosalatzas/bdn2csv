@@ -31,6 +31,7 @@ bdn2csv.convert(xml_path="Export.xml", csv_path="Import.csv")
 Example:
 
 ```sh
+cd bdn2csv
 python bdn2csv.py "Export.xml" "Import.csv"
 ```
 
