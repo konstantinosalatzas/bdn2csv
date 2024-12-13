@@ -18,6 +18,14 @@ and to import the result CSV file into SAS BDN.
 
 ### As a module
 
+Example:
+
+```python
+import bdn2csv
+
+bdn2csv.convert(xml_path="Export.xml", csv_path="Import.csv")
+```
+
 ### As a CLI
 
 ## Installation
