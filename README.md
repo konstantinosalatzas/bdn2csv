@@ -34,5 +34,3 @@ Example:
 cd bdn2csv
 python bdn2csv.py "Export.xml" "Import.csv"
 ```
-
-## Installation
