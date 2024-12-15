@@ -13,3 +13,24 @@ bdn2csv transforms an XML Export file into an equivalent CSV Import file:
 * for a developer to process it programmatically as a table
 
 and to import the result CSV file into SAS BDN.
+
+## Usage
+
+### As a module
+
+Example:
+
+```py
+import bdn2csv
+
+bdn2csv.convert(xml_path="Export.xml", csv_path="Import.csv")
+```
+
+### As a CLI
+
+Example:
+
+```sh
+cd bdn2csv
+python bdn2csv.py "Export.xml" "Import.csv"
+```
