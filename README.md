@@ -34,3 +34,13 @@ Example:
 cd bdn2csv
 python bdn2csv.py "Export.xml" "Import.csv"
 ```
+
+## Installation
+
+### From source
+
+```sh
+git clone https://github.com/konstantinosalatzas/bdn2csv.git
+cd bdn2csv
+python -m pip install bdn2csv
+```
