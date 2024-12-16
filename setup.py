@@ -2,6 +2,10 @@ from setuptools import setup
 
 setup(
     name="bdn2csv",
+    version="0.1.0",
+    description="SAS Business Data Network (BDN) XML to CSV converter",
+    author="Konstantinos Alatzas",
+    url="https://github.com/konstantinosalatzas/bdn2csv",
     install_requires=[
         'pandas'
     ]
