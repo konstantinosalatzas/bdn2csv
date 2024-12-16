@@ -6,6 +6,9 @@ setup(
     description="SAS Business Data Network (BDN) XML to CSV converter",
     author="Konstantinos Alatzas",
     url="https://github.com/konstantinosalatzas/bdn2csv",
+    packages=[
+        'bdn2csv'
+    ],
     install_requires=[
         'pandas'
     ]
