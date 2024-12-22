@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Resources>
+    <Resource label="Warehouse" identity="Warehouse" type="BDNTERM">
+        <Attributes>
+            <attribute name="Description" value="Storage facility for goods and raw materials"/>
+            <attribute name="Requirements" value="Must meet size and security standards"/>
+            <attribute name="Status" value="Not Specified"/>
+            <attribute name="Importance" value="Medium"/>
+        </Attributes>
+        <Dependencies>
+            <dependency type="A">
+                <Resource identity="Logistics" type="BDNTAG"/>
+            </dependency>
+        </Dependencies>
+    </Resource>
+    <Resource label="Loading Dock" identity="Warehouse\Loading Dock" type="BDNTERM">
+        <Attributes>
+            <attribute name="Description" value="Facility for incoming and outgoing goods"/>
+            <attribute name="Requirements" value=""/>
+            <attribute name="Status" value="Not Specified"/>
+            <attribute name="Importance" value="Medium"/>
+        </Attributes>
+        <Dependencies>
+            <dependency type="D">
+                <Resource label="Warehouse" identity="Warehouse" type="BDNTERMREF"/>
+            </dependency>
+        </Dependencies>
+    </Resource>
+    <Resource label="Section" identity="Warehouse\Section" type="BDNTERM">
+        <Attributes>
+            <attribute name="Description" value="Section of the warehouse designated for a specific product or type of product"/>
+            <attribute name="Requirements" value="Must be secure and accessible"/>
+            <attribute name="Status" value="Not Specified"/>
+            <attribute name="Importance" value="Medium"/>
+        </Attributes>
+        <Dependencies>
+            <dependency type="D">
+                <Resource label="Warehouse" identity="Warehouse" type="BDNTERMREF"/>
+            </dependency>
+            <dependency type="A">
+                <Resource label="Picking" identity="Picking" type="BDNTERMREF"/>
+                <Resource identity="Logistics" type="BDNTAG"/>
+            </dependency>
+        </Dependencies>
+    </Resource>
+</Resources>
