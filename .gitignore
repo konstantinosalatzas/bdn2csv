@@ -4,3 +4,4 @@ __pycache__
 !Warehouse.xml
 
 *.csv
+!Warehouse.csv
