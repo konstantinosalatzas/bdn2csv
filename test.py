@@ -5,7 +5,7 @@ import pandas as pd
 class TestConvert(unittest.TestCase):
     def test_convert(self):
         xml_path = "/workspaces/bdn2csv/data/Warehouse.xml"
-        csv_path = "/workspaces/bdn2csv/data/Warehouse.csv"
+        csv_path = "/workspaces/bdn2csv/data/Test.csv"
         bdn2csv.convert(xml_path, csv_path)
         df_out = pd.read_csv(csv_path) # Output DataFrame
         df_ans = pd.read_csv("/workspaces/bdn2csv/data/Warehouse.csv") # Expected DataFrame
