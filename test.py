@@ -4,18 +4,18 @@ import pandas as pd
 
 class TestConvert(unittest.TestCase):
     def test_convert(self):
-        xml_path = "/workspaces/bdn2csv/data/Export.xml"
+        xml_path = "/workspaces/bdn2csv/data/Warehouse.xml"
         csv_path = "/workspaces/bdn2csv/data/Test.csv"
         bdn2csv.convert(xml_path, csv_path)
         df_out = pd.read_csv(csv_path) # Output DataFrame
-        df_ans = pd.read_csv("/workspaces/bdn2csv/data/Import.csv") # Expected DataFrame
+        df_ans = pd.read_csv("/workspaces/bdn2csv/data/Warehouse.csv") # Expected DataFrame
         df_cmp = df_out.compare(df_ans)
         self.assertEqual(len(df_cmp.index), 0)
 
 class TestParse(unittest.TestCase):
     def setUp(self):
-        self.bdn = bdn2csv.BDN("/workspaces/bdn2csv/data/Export.xml")
-        self.df_ans = pd.read_csv("/workspaces/bdn2csv/data/Import.csv", dtype=object, keep_default_na=False) # Expected DataFrame
+        self.bdn = bdn2csv.BDN("/workspaces/bdn2csv/data/Warehouse.xml")
+        self.df_ans = pd.read_csv("/workspaces/bdn2csv/data/Warehouse.csv", dtype=object, keep_default_na=False) # Expected DataFrame
 
     def test_parse_types(self):
         self.bdn.parse_types()
