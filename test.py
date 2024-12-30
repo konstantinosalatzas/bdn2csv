@@ -4,7 +4,7 @@ import pandas as pd
 
 class TestConvert(unittest.TestCase):
     def test_convert(self):
-        xml_path = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        xml_string = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
         <Resources>
             <Resource label="Warehouse" identity="Warehouse" type="BDNTERM">
                 <Attributes>
@@ -51,7 +51,7 @@ class TestConvert(unittest.TestCase):
             </Resource>
         </Resources>"""
         csv_path = "/workspaces/bdn2csv/data/Test.csv"
-        bdn2csv.convert(xml_path, csv_path)
+        bdn2csv.convert(xml_string, csv_path)
         df_out = pd.read_csv(csv_path) # Output DataFrame
         df_ans = pd.read_csv("/workspaces/bdn2csv/data/Warehouse.csv") # Expected DataFrame
         df_cmp = df_out.compare(df_ans)
