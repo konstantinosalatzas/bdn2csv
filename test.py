@@ -116,7 +116,7 @@ class TestParse(unittest.TestCase):
             </Resource>
         </Resources>"""
         self.bdn = bdn2csv.BDN(xml_string)
-        self.df_ans = pd.read_csv("/workspaces/bdn2csv/data/Warehouse.csv", dtype=object, keep_default_na=False) # Expected DataFrame
+        # Expected DataFrame
         self.df_ans = pd.DataFrame(
             {"Name": ["Warehouse", "Loading Dock", "Section"],
              "Path": ["Warehouse", "Warehouse\Loading Dock", "Warehouse\Section"],
