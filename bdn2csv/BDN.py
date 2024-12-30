@@ -5,7 +5,7 @@ class BDN:
     def __init__(self, xml_path: str):
         try:
             self.xml = et.parse(xml_path)
-        except:
+        except: # In testing the XML is parsed from string
             self.xml = et.fromstring(xml_path)
         self.types = [] # list of unique types of attributes
         self.std_attrs = ["Name", "Path"] # list of unique standard attrbiutes
