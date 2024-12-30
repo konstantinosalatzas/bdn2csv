@@ -144,8 +144,6 @@ class TestParse(unittest.TestCase):
         if "Description" in df_out.columns.tolist():
             df_out['Description'] = df_out['Description'].apply(lambda x: str(x).strip('"'))
         df_cmp = df_out.compare(self.df_ans)
-        print(df_out.head())
-        print(self.df_ans.head())
         self.assertEqual(len(df_cmp.index), 0)
 
 if __name__ == "__main__":
