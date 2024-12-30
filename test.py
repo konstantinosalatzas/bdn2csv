@@ -1,6 +1,7 @@
 import unittest
 import bdn2csv
 import pandas as pd
+import numpy as np
 
 class TestConvert(unittest.TestCase):
     def test_convert(self):
@@ -54,6 +55,14 @@ class TestConvert(unittest.TestCase):
         bdn2csv.convert(xml_string, csv_path)
         df_out = pd.read_csv(csv_path) # Output DataFrame
         df_ans = pd.read_csv("/workspaces/bdn2csv/data/Warehouse.csv") # Expected DataFrame
+        df_ans = pd.DataFrame({"Name": ["Warehouse", "Loading Dock", "Section"],
+                               "Path": ["Warehouse", "Warehouse\Loading Dock", "Warehouse\Section"],
+                               "Description": ["Storage facility for goods and raw materials", "Facility for incoming and outgoing goods", "Section of the warehouse designated for a specific product or type of product"],
+                               "Requirements": ["Must meet size and security standards", np.nan, "Must be secure and accessible"],
+                               "Status": ["Not Specified", "Not Specified", "Not Specified"],
+                               "Importance": ["Medium", "Medium", "Medium"],
+                               "Tags": ["Logistics", np.nan, "Logistics"],
+                               "Related Terms": [np.nan, np.nan, "Picking"]})
         df_cmp = df_out.compare(df_ans)
         self.assertEqual(len(df_cmp.index), 0)
 
