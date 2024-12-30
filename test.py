@@ -116,6 +116,16 @@ class TestParse(unittest.TestCase):
         </Resources>"""
         self.bdn = bdn2csv.BDN(xml_string)
         self.df_ans = pd.read_csv("/workspaces/bdn2csv/data/Warehouse.csv", dtype=object, keep_default_na=False) # Expected DataFrame
+        self.df_ans = pd.DataFrame(
+            {"Name": ["Warehouse", "Loading Dock", "Section"],
+             "Path": ["Warehouse", "Warehouse\Loading Dock", "Warehouse\Section"],
+             "Description": ["Storage facility for goods and raw materials", "Facility for incoming and outgoing goods", "Section of the warehouse designated for a specific product or type of product"],
+             "Requirements": ["Must meet size and security standards", "", "Must be secure and accessible"],
+             "Status": ["Not Specified", "Not Specified", "Not Specified"],
+             "Importance": ["Medium", "Medium", "Medium"],
+             "Tags": ["Logistics", "", "Logistics"],
+             "Related Terms": ["", "", "Picking"]}
+        )
 
     def test_parse_types(self):
         self.bdn.parse_types()
@@ -133,6 +143,8 @@ class TestParse(unittest.TestCase):
         if "Description" in df_out.columns.tolist():
             df_out['Description'] = df_out['Description'].apply(lambda x: str(x).strip('"'))
         df_cmp = df_out.compare(self.df_ans)
+        print(df_out.head())
+        print(self.df_ans.head())
         self.assertEqual(len(df_cmp.index), 0)
 
 if __name__ == "__main__":
