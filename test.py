@@ -1,7 +1,6 @@
 import unittest
 import bdn2csv
 import pandas as pd
-import numpy as np
 
 class TestConvert(unittest.TestCase):
     def test_convert(self):
