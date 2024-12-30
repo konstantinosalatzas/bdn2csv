@@ -50,7 +50,7 @@ class TestConvert(unittest.TestCase):
                 </Dependencies>
             </Resource>
         </Resources>"""
-        csv_path = "/workspaces/bdn2csv/data/Test.csv"
+        csv_path = "./data/Test.csv"
         bdn2csv.convert(xml_string, csv_path)
         df_out = pd.read_csv(csv_path, dtype=object, keep_default_na=False) # Output DataFrame
         # Expected DataFrame
