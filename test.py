@@ -4,9 +4,54 @@ import pandas as pd
 
 class TestConvert(unittest.TestCase):
     def test_convert(self):
-        xml_path = "/workspaces/bdn2csv/data/Warehouse.xml"
+        xml_string = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <Resources>
+            <Resource label="Warehouse" identity="Warehouse" type="BDNTERM">
+                <Attributes>
+                    <attribute name="Description" value="Storage facility for goods and raw materials"/>
+                    <attribute name="Requirements" value="Must meet size and security standards"/>
+                    <attribute name="Status" value="Not Specified"/>
+                    <attribute name="Importance" value="Medium"/>
+                </Attributes>
+                <Dependencies>
+                    <dependency type="A">
+                        <Resource identity="Logistics" type="BDNTAG"/>
+                    </dependency>
+                </Dependencies>
+            </Resource>
+            <Resource label="Loading Dock" identity="Warehouse\Loading Dock" type="BDNTERM">
+                <Attributes>
+                    <attribute name="Description" value="Facility for incoming and outgoing goods"/>
+                    <attribute name="Requirements" value=""/>
+                    <attribute name="Status" value="Not Specified"/>
+                    <attribute name="Importance" value="Medium"/>
+                </Attributes>
+                <Dependencies>
+                    <dependency type="D">
+                        <Resource label="Warehouse" identity="Warehouse" type="BDNTERMREF"/>
+                    </dependency>
+                </Dependencies>
+            </Resource>
+            <Resource label="Section" identity="Warehouse\Section" type="BDNTERM">
+                <Attributes>
+                    <attribute name="Description" value="Section of the warehouse designated for a specific product or type of product"/>
+                    <attribute name="Requirements" value="Must be secure and accessible"/>
+                    <attribute name="Status" value="Not Specified"/>
+                    <attribute name="Importance" value="Medium"/>
+                </Attributes>
+                <Dependencies>
+                    <dependency type="D">
+                        <Resource label="Warehouse" identity="Warehouse" type="BDNTERMREF"/>
+                    </dependency>
+                    <dependency type="A">
+                        <Resource label="Picking" identity="Picking" type="BDNTERMREF"/>
+                        <Resource identity="Logistics" type="BDNTAG"/>
+                    </dependency>
+                </Dependencies>
+            </Resource>
+        </Resources>"""
         csv_path = "/workspaces/bdn2csv/data/Test.csv"
-        bdn2csv.convert(xml_path, csv_path)
+        bdn2csv.convert(xml_string, csv_path)
         df_out = pd.read_csv(csv_path) # Output DataFrame
         df_ans = pd.read_csv("/workspaces/bdn2csv/data/Warehouse.csv") # Expected DataFrame
         df_cmp = df_out.compare(df_ans)
@@ -14,7 +59,53 @@ class TestConvert(unittest.TestCase):
 
 class TestParse(unittest.TestCase):
     def setUp(self):
-        self.bdn = bdn2csv.BDN("/workspaces/bdn2csv/data/Warehouse.xml")
+        xml_string = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <Resources>
+            <Resource label="Warehouse" identity="Warehouse" type="BDNTERM">
+                <Attributes>
+                    <attribute name="Description" value="Storage facility for goods and raw materials"/>
+                    <attribute name="Requirements" value="Must meet size and security standards"/>
+                    <attribute name="Status" value="Not Specified"/>
+                    <attribute name="Importance" value="Medium"/>
+                </Attributes>
+                <Dependencies>
+                    <dependency type="A">
+                        <Resource identity="Logistics" type="BDNTAG"/>
+                    </dependency>
+                </Dependencies>
+            </Resource>
+            <Resource label="Loading Dock" identity="Warehouse\Loading Dock" type="BDNTERM">
+                <Attributes>
+                    <attribute name="Description" value="Facility for incoming and outgoing goods"/>
+                    <attribute name="Requirements" value=""/>
+                    <attribute name="Status" value="Not Specified"/>
+                    <attribute name="Importance" value="Medium"/>
+                </Attributes>
+                <Dependencies>
+                    <dependency type="D">
+                        <Resource label="Warehouse" identity="Warehouse" type="BDNTERMREF"/>
+                    </dependency>
+                </Dependencies>
+            </Resource>
+            <Resource label="Section" identity="Warehouse\Section" type="BDNTERM">
+                <Attributes>
+                    <attribute name="Description" value="Section of the warehouse designated for a specific product or type of product"/>
+                    <attribute name="Requirements" value="Must be secure and accessible"/>
+                    <attribute name="Status" value="Not Specified"/>
+                    <attribute name="Importance" value="Medium"/>
+                </Attributes>
+                <Dependencies>
+                    <dependency type="D">
+                        <Resource label="Warehouse" identity="Warehouse" type="BDNTERMREF"/>
+                    </dependency>
+                    <dependency type="A">
+                        <Resource label="Picking" identity="Picking" type="BDNTERMREF"/>
+                        <Resource identity="Logistics" type="BDNTAG"/>
+                    </dependency>
+                </Dependencies>
+            </Resource>
+        </Resources>"""
+        self.bdn = bdn2csv.BDN(xml_string)
         self.df_ans = pd.read_csv("/workspaces/bdn2csv/data/Warehouse.csv", dtype=object, keep_default_na=False) # Expected DataFrame
 
     def test_parse_types(self):

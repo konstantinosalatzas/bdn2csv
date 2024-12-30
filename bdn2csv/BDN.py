@@ -3,7 +3,10 @@ import xml.etree.ElementTree as et
 
 class BDN:
     def __init__(self, xml_path: str):
-        self.xml = et.parse(xml_path)
+        try:
+            self.xml = et.parse(xml_path)
+        except:
+            self.xml = et.fromstring(xml_path)
         self.types = [] # list of unique types of attributes
         self.std_attrs = ["Name", "Path"] # list of unique standard attrbiutes
         self.non_std_attrs = [] # list of unique non-standard attributes
