@@ -12,10 +12,21 @@ class TestConvert(unittest.TestCase):
                     <attribute name="Requirements" value="Must meet size and security standards"/>
                     <attribute name="Status" value="Not Specified"/>
                     <attribute name="Importance" value="Medium"/>
+                    <attribute name="Type" value="Root"/>
                 </Attributes>
                 <Dependencies>
                     <dependency type="A">
                         <Resource identity="Logistics" type="BDNTAG"/>
+                    </dependency>
+                    <dependency type="I">
+                        <Resource label="Type" identity="Warehouse\Attribute0" type="BDNATTRIB">
+                            <Attributes>
+                                <attribute name="Instructions" value=""/>
+                                <attribute name="Value" value="Test"/>
+                                <attribute name="Required" value="Y"/>
+                                <attribute name="Type" value="Common"/>
+                            </Attributes>
+                        </Resource>
                     </dependency>
                 </Dependencies>
             </Resource>
@@ -25,10 +36,21 @@ class TestConvert(unittest.TestCase):
                     <attribute name="Requirements" value=""/>
                     <attribute name="Status" value="Not Specified"/>
                     <attribute name="Importance" value="Medium"/>
+                    <attribute name="Type" value="Leaf"/>
                 </Attributes>
                 <Dependencies>
                     <dependency type="D">
                         <Resource label="Warehouse" identity="Warehouse" type="BDNTERMREF"/>
+                    </dependency>
+                    <dependency type="I">
+                        <Resource label="Type" identity="Warehouse\Loading Dock\Attribute0" type="BDNATTRIB">
+                            <Attributes>
+                                <attribute name="Instructions" value=""/>
+                                <attribute name="Value" value="Test"/>
+                                <attribute name="Required" value="Y"/>
+                                <attribute name="Type" value="Common"/>
+                            </Attributes>
+                        </Resource>
                     </dependency>
                 </Dependencies>
             </Resource>
@@ -38,6 +60,7 @@ class TestConvert(unittest.TestCase):
                     <attribute name="Requirements" value="Must be secure and accessible"/>
                     <attribute name="Status" value="Not Specified"/>
                     <attribute name="Importance" value="Medium"/>
+                    <attribute name="Type" value="Leaf"/>
                 </Attributes>
                 <Dependencies>
                     <dependency type="D">
@@ -46,6 +69,16 @@ class TestConvert(unittest.TestCase):
                     <dependency type="A">
                         <Resource label="Picking" identity="Picking" type="BDNTERMREF"/>
                         <Resource identity="Logistics" type="BDNTAG"/>
+                    </dependency>
+                    <dependency type="I">
+                        <Resource label="Type" identity="Warehouse\Section\Attribute0" type="BDNATTRIB">
+                            <Attributes>
+                                <attribute name="Instructions" value=""/>
+                                <attribute name="Value" value="Test"/>
+                                <attribute name="Required" value="Y"/>
+                                <attribute name="Type" value="Common"/>
+                            </Attributes>
+                        </Resource>
                     </dependency>
                 </Dependencies>
             </Resource>
