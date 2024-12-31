@@ -94,6 +94,8 @@ class TestConvert(unittest.TestCase):
              "Requirements": ["Must meet size and security standards", "", "Must be secure and accessible"],
              "Status": ["Not Specified", "Not Specified", "Not Specified"],
              "Importance": ["Medium", "Medium", "Medium"],
+             "Type": ["Root", "Leaf", "Leaf"],
+             "Type.1": ["Test", "Test", "Test"],
              "Tags": ["Logistics", "", "Logistics"],
              "Related Terms": ["", "", "Picking"]}
         )
