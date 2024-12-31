@@ -16,9 +16,9 @@
                 <Resource label="Type" identity="Warehouse\Attribute0" type="BDNATTRIB">
                     <Attributes>
                         <attribute name="Instructions" value=""/>
-                        <attribute name="Value" value="nvarchar"/>
+                        <attribute name="Value" value="Test"/>
                         <attribute name="Required" value="Y"/>
-                        <attribute name="Type" value="Test"/>
+                        <attribute name="Type" value="Common"/>
                     </Attributes>
                 </Resource>
             </dependency>

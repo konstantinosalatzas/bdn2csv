@@ -1,4 +1,4 @@
-Name,Path,Description,Requirements,Status,Importance,Type,Tags,Related Terms
-Warehouse,Warehouse,"Storage facility for goods and raw materials",Must meet size and security standards,Not Specified,Medium,Root,Logistics,
-Loading Dock,Warehouse\Loading Dock,"Facility for incoming and outgoing goods",,Not Specified,Medium,Leaf,,
-Section,Warehouse\Section,"Section of the warehouse designated for a specific product or type of product",Must be secure and accessible,Not Specified,Medium,Leaf,Logistics,Picking
+Name,Path,Description,Requirements,Status,Importance,Type,Type,Tags,Related Terms
+Warehouse,Warehouse,"Storage facility for goods and raw materials",Must meet size and security standards,Not Specified,Medium,Root,nvarchar,Logistics,
+Loading Dock,Warehouse\Loading Dock,"Facility for incoming and outgoing goods",,Not Specified,Medium,Leaf,,,
+Section,Warehouse\Section,"Section of the warehouse designated for a specific product or type of product",Must be secure and accessible,Not Specified,Medium,Leaf,,Logistics,Picking
