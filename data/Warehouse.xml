@@ -20,6 +20,7 @@
             <attribute name="Requirements" value=""/>
             <attribute name="Status" value="Not Specified"/>
             <attribute name="Importance" value="Medium"/>
+            <attribute name="Type" value="Leaf"/>
         </Attributes>
         <Dependencies>
             <dependency type="D">
@@ -33,6 +34,7 @@
             <attribute name="Requirements" value="Must be secure and accessible"/>
             <attribute name="Status" value="Not Specified"/>
             <attribute name="Importance" value="Medium"/>
+            <attribute name="Type" value="Leaf"/>
         </Attributes>
         <Dependencies>
             <dependency type="D">
