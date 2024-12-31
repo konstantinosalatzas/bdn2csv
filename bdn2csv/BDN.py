@@ -24,8 +24,9 @@ class BDN:
                 for attribute in resource.find("Attributes").findall("attribute"): # standard attributes
                     if attribute.attrib['name'] not in std_attrs:
                         # Handle the case when "Type" is in standard AND non-standard attributes
-                        if (attribute.attrib['name'] == "Type") and ("Type_" not in std_attrs):
-                            std_attrs.append("Type_")
+                        if (attribute.attrib['name'] == "Type"):
+                            if ("Type_" not in std_attrs):
+                                std_attrs.append("Type_")
                         else:
                             std_attrs.append(attribute.attrib['name'])
                 if resource.find("Dependencies") is not None:
