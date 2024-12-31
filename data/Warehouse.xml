@@ -6,6 +6,7 @@
             <attribute name="Requirements" value="Must meet size and security standards"/>
             <attribute name="Status" value="Not Specified"/>
             <attribute name="Importance" value="Medium"/>
+            <attribute name="Type" value="Root"/>
         </Attributes>
         <Dependencies>
             <dependency type="A">
