@@ -36,6 +36,16 @@
             <dependency type="D">
                 <Resource label="Warehouse" identity="Warehouse" type="BDNTERMREF"/>
             </dependency>
+            <dependency type="I">
+                <Resource label="Type" identity="Warehouse\Loading Dock\Attribute0" type="BDNATTRIB">
+                    <Attributes>
+                        <attribute name="Instructions" value=""/>
+                        <attribute name="Value" value="Test"/>
+                        <attribute name="Required" value="Y"/>
+                        <attribute name="Type" value="Common"/>
+                    </Attributes>
+                </Resource>
+            </dependency>
         </Dependencies>
     </Resource>
     <Resource label="Section" identity="Warehouse\Section" type="BDNTERM">
