@@ -114,11 +114,6 @@ class BDN:
                         elif r.attrib['type'] == "BDNNOTE": # Notes
                             for a in r.find("Attributes").findall("attribute"):
                                 if a.attrib['name'] == "Content":
-                                    '''
-                                    if len(values['Notes']) > 0:
-                                        values['Notes'] += ","
-                                    values['Notes'] += a.attrib['value']
-                                    '''
                                     values['Notes'] = add_multiple_value(values['Notes'], a.attrib['value'])
                 if has_tag_or_ref:
                     for r in tag_or_ref.findall("Resource"):
