@@ -18,5 +18,5 @@ def convert(xml_path: str, csv_path: str):
             if is_first_line:
                 line = line.replace("Type_", "Type") # when "Type" is in standard AND non-standard attributes
                 is_first_line = False
-            line = line.replace('"""', '"') # Replace (""") with (") quotation
+            line = line.replace('"""', '"')
             wf.write(line)
