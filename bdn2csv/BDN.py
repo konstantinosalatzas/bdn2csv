@@ -1,6 +1,12 @@
 import pandas as pd
 import xml.etree.ElementTree as et
 
+def add_multiple_value(values: str, value: str) -> str:
+    if len(values) > 0:
+        values += ","
+    values += value
+    return values
+
 class BDN:
     def __init__(self, xml_path: str):
         try:
@@ -104,26 +110,18 @@ class BDN:
                         if r.attrib['type'] == "BDNATTRIB":
                             for a in r.find("Attributes").findall("attribute"):
                                 if a.attrib['name'] == "Value":
-                                    if len(values[r.attrib['label']]) > 0:
-                                        values[r.attrib['label']] += ","
-                                    values[r.attrib['label']] += a.attrib['value']
+                                    values[r.attrib['label']] = add_multiple_value(values[r.attrib['label']], a.attrib['value'])
                         elif r.attrib['type'] == "BDNNOTE": # Notes
                             for a in r.find("Attributes").findall("attribute"):
                                 if a.attrib['name'] == "Content":
-                                    if len(values['Notes']) > 0:
-                                        values['Notes'] += ","
-                                    values['Notes'] += a.attrib['value']
+                                    values['Notes'] = add_multiple_value(values['Notes'], a.attrib['value'])
                 if has_tag_or_ref:
                     for r in tag_or_ref.findall("Resource"):
                         if r.attrib['type'] == "BDNTAG": # Tags
-                            if len(values['Tags']) > 0:
-                                values['Tags'] += ","
-                            values['Tags'] += r.attrib['identity']
+                            values['Tags'] = add_multiple_value(values['Tags'], r.attrib['identity'])
                     for r in tag_or_ref.findall("Resource"):
                         if r.attrib['type'] == "BDNTERMREF": # Related Terms
-                            if len(values['Related Terms']) > 0:
-                                values['Related Terms'] += ","
-                            values['Related Terms'] += r.attrib['identity']
+                            values['Related Terms'] = add_multiple_value(values['Related Terms'], r.attrib['identity'])
                 for a in non_std_attrs:
                     bdn[a].append(values[a])
         
