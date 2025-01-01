@@ -84,9 +84,6 @@ class TestConvert(unittest.TestCase):
                 </Dependencies>
             </Resource>
         </Resources>"""
-        csv_path = "./data/Test.csv"
-        bdn2csv.convert(xml_string, csv_path)
-        df_out = pd.read_csv(csv_path, dtype=object, keep_default_na=False) # Output DataFrame
         # Expected DataFrame
         df_ans = pd.DataFrame(
             {"Name": ["Warehouse", "Loading Dock", "Section"],
@@ -100,6 +97,9 @@ class TestConvert(unittest.TestCase):
              "Tags": ["Logistics", "", "Logistics"],
              "Related Terms": ["", "", "Picking,Warehouse\Loading Dock"]}
         )
+        csv_path = "./data/Test.csv"
+        bdn2csv.convert(xml_string, csv_path)
+        df_out = pd.read_csv(csv_path, dtype=object, keep_default_na=False) # Output DataFrame
         df_cmp = df_out.compare(df_ans)
         self.assertEqual(len(df_cmp.index), 0)
 
