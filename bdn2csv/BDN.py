@@ -1,7 +1,7 @@
 import pandas as pd
 import xml.etree.ElementTree as et
 
-def add_multiple_value(values, value):
+def add_multiple_value(values: str, value: str) -> str:
     if len(values) > 0:
         values += ","
     values += value
