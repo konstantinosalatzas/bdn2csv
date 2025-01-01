@@ -220,7 +220,8 @@ class TestParse(unittest.TestCase):
 
 class TestAddMultipleValue(unittest.TestCase):
     def test_multiple_value(self):
-        pass
+        values = "Picking"
+        value = "Warehouse\Loading Dock"
 
 if __name__ == "__main__":
     unittest.main()
