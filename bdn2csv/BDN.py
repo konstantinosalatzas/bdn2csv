@@ -110,11 +110,6 @@ class BDN:
                         if r.attrib['type'] == "BDNATTRIB":
                             for a in r.find("Attributes").findall("attribute"):
                                 if a.attrib['name'] == "Value":
-                                    '''
-                                    if len(values[r.attrib['label']]) > 0:
-                                        values[r.attrib['label']] += ","
-                                    values[r.attrib['label']] += a.attrib['value']
-                                    '''
                                     values[r.attrib['label']] = add_multiple_value(values[r.attrib['label']], a.attrib['value'])
                         elif r.attrib['type'] == "BDNNOTE": # Notes
                             for a in r.find("Attributes").findall("attribute"):
