@@ -1,2 +1,2 @@
-python bdn2csv.py "./data/Export.xml" "./data/Import.csv"
-python bdn2csv.py -v "./data/Export.xml" "./data/Import.csv"
+python bdn2csv.py "./data/Warehouse.xml" "./data/Warehouse.csv"
+python bdn2csv.py -v "./data/Warehouse.xml" "./data/Warehouse.csv"
