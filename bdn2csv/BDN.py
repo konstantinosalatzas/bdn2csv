@@ -1,8 +1,11 @@
 import pandas as pd
 import xml.etree.ElementTree as et
 
-def add_multiple_value():
-    pass
+def add_multiple_value(values, value):
+    if len(values) > 0:
+        values += ","
+    values += value
+    return values
 
 class BDN:
     def __init__(self, xml_path: str):
