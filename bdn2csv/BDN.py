@@ -128,9 +128,12 @@ class BDN:
                 if has_tag_or_ref:
                     for r in tag_or_ref.findall("Resource"):
                         if r.attrib['type'] == "BDNTAG": # Tags
+                            '''
                             if len(values['Tags']) > 0:
                                 values['Tags'] += ","
                             values['Tags'] += r.attrib['identity']
+                            '''
+                            values['Tags'] = add_multiple_value(values['Tags'], r.attrib['identity'])
                     for r in tag_or_ref.findall("Resource"):
                         if r.attrib['type'] == "BDNTERMREF": # Related Terms
                             if len(values['Related Terms']) > 0:
