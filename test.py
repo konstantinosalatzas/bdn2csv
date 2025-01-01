@@ -218,5 +218,9 @@ class TestParse(unittest.TestCase):
         df_cmp = df_out.compare(self.df_ans)
         self.assertEqual(len(df_cmp.index), 0)
 
+class TestAddMultipleValue(unittest.TestCase):
+    def test_multiple_value(self):
+        pass
+
 if __name__ == "__main__":
     unittest.main()
