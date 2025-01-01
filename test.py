@@ -68,6 +68,7 @@ class TestConvert(unittest.TestCase):
                     </dependency>
                     <dependency type="A">
                         <Resource label="Picking" identity="Picking" type="BDNTERMREF"/>
+                        <Resource identity="Warehouse\Loading Dock" type="BDNTERMREF"/>
                         <Resource identity="Logistics" type="BDNTAG"/>
                     </dependency>
                     <dependency type="I">
@@ -97,7 +98,7 @@ class TestConvert(unittest.TestCase):
              "Type": ["Root", "Leaf", "Leaf"],
              "Type.1": ["Test", "Test", "Test"],
              "Tags": ["Logistics", "", "Logistics"],
-             "Related Terms": ["", "", "Picking"]}
+             "Related Terms": ["", "", "Picking,Warehouse\Loading Dock"]}
         )
         df_cmp = df_out.compare(df_ans)
         self.assertEqual(len(df_cmp.index), 0)
@@ -168,6 +169,7 @@ class TestParse(unittest.TestCase):
                     </dependency>
                     <dependency type="A">
                         <Resource label="Picking" identity="Picking" type="BDNTERMREF"/>
+                        <Resource identity="Warehouse\Loading Dock" type="BDNTERMREF"/>
                         <Resource identity="Logistics" type="BDNTAG"/>
                     </dependency>
                     <dependency type="I">
@@ -195,7 +197,7 @@ class TestParse(unittest.TestCase):
              "Type": ["Root", "Leaf", "Leaf"],
              "Type.1": ["Test", "Test", "Test"],
              "Tags": ["Logistics", "", "Logistics"],
-             "Related Terms": ["", "", "Picking"]}
+             "Related Terms": ["", "", "Picking,Warehouse\Loading Dock"]}
         )
 
     def test_parse_types(self):
