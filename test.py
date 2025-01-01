@@ -222,6 +222,9 @@ class TestAddMultipleValue(unittest.TestCase):
     def test_multiple_value(self):
         values = "Picking"
         value = "Warehouse\Loading Dock"
+        values_out = bdn2csv.add_multiple_value(values, value)
+        values_ans = "Picking,Warehouse\Loading Dock"
+        self.assertEqual(values_out, values_ans)
 
 if __name__ == "__main__":
     unittest.main()
