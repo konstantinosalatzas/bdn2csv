@@ -68,6 +68,7 @@ class TestConvert(unittest.TestCase):
                     </dependency>
                     <dependency type="A">
                         <Resource label="Picking" identity="Picking" type="BDNTERMREF"/>
+                        <Resource identity="Warehouse\Loading Dock" type="BDNTERMREF"/>
                         <Resource identity="Logistics" type="BDNTAG"/>
                     </dependency>
                     <dependency type="I">
