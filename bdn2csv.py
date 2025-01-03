@@ -1,5 +1,3 @@
-"""bdn2csv CLI"""
-
 import argparse
 import bdn2csv
 import pandas as pd
