@@ -225,6 +225,9 @@ class TestParse(unittest.TestCase):
         self.assertEqual(len(df_cmp.index), 0)
 
 class TestAddMultipleValue(unittest.TestCase):
+    def test_add_multiple_value_empty(self):
+        pass
+
     def test_add_multiple_value(self):
         values = "Picking"
         value = "Warehouse\Loading Dock"
