@@ -225,8 +225,14 @@ class TestParse(unittest.TestCase):
         self.assertEqual(len(df_cmp.index), 0)
 
 class TestAddMultipleValue(unittest.TestCase):
-    def test_add_multiple_value_empty(self):
-        pass
+    def test_add_multiple_value_to_empty(self):
+        values = ""
+        value = "Warehouse\Loading Dock"
+        values_ans = "Warehouse\Loading Dock"
+        
+        values_out = bdn2csv.add_multiple_value(values, value)
+        
+        self.assertEqual(values_out, values_ans)
 
     def test_add_multiple_value_to_not_empty(self):
         values = "Picking"
