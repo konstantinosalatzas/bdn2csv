@@ -228,7 +228,7 @@ class TestAddMultipleValue(unittest.TestCase):
     def test_add_multiple_value_empty(self):
         pass
 
-    def test_add_multiple_value(self):
+    def test_add_multiple_value_to_not_empty(self):
         values = "Picking"
         value = "Warehouse\Loading Dock"
         values_ans = "Picking,Warehouse\Loading Dock"
