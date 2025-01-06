@@ -185,7 +185,7 @@ class TestParse(unittest.TestCase):
                     </dependency>
                 </Dependencies>
             </Resource>
-        </Resources>"""
+        </Resources>""" # input XML
         self.bdn = bdn2csv.BDN(xml_string)
         self.df_ans = pd.DataFrame(
             {"Name": ["Warehouse", "Loading Dock", "Section"],
