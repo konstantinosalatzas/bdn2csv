@@ -54,13 +54,12 @@ class BDN:
                             non_std_attrs.append(r.attrib['label'])
                         elif (r.attrib['type'] == "BDNNOTE") and ("Notes" not in non_std_attrs): # Notes
                             non_std_attrs.append("Notes")
-                if not has_tag_or_ref:
-                    continue
-                for r in tag_or_ref.findall("Resource"):
-                    if (r.attrib['type'] == "BDNTAG") and ("Tags" not in non_std_attrs): # Tags
-                        non_std_attrs.append("Tags")
-                    if (r.attrib['type'] == "BDNTERMREF") and ("Related Terms" not in non_std_attrs): # Related Terms
-                        non_std_attrs.append("Related Terms")
+                if has_tag_or_ref:
+                    for r in tag_or_ref.findall("Resource"):
+                        if (r.attrib['type'] == "BDNTAG") and ("Tags" not in non_std_attrs): # Tags
+                            non_std_attrs.append("Tags")
+                        if (r.attrib['type'] == "BDNTERMREF") and ("Related Terms" not in non_std_attrs): # Related Terms
+                            non_std_attrs.append("Related Terms")
         
         return (std_attrs + non_std_attrs)
     
