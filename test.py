@@ -188,7 +188,6 @@ class TestParse(unittest.TestCase):
             </Resource>
         </Resources>"""
         self.bdn = bdn2csv.BDN(xml_string)
-        # Expected DataFrame
         self.df_ans = pd.DataFrame(
             {"Name": ["Warehouse", "Loading Dock", "Section"],
              "Path": ["Warehouse", "Warehouse\Loading Dock", "Warehouse\Section"],
@@ -200,7 +199,7 @@ class TestParse(unittest.TestCase):
              "Type.1": ["Test", "Test", "Test"],
              "Tags": ["Logistics", "", "Logistics"],
              "Related Terms": ["", "", "Picking,Warehouse\Loading Dock"]}
-        )
+        ) # expected DataFrame
 
     def test_parse_types(self):
         list_ans = self.df_ans.columns.tolist() # Expected list
