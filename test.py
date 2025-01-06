@@ -100,7 +100,7 @@ class TestConvert(unittest.TestCase):
 
         csv_path = "./data/Test.csv"
         bdn2csv.convert(xml_string, csv_path)
-        df_out = pd.read_csv(csv_path, dtype=object, keep_default_na=False) # Output DataFrame
+        df_out = pd.read_csv(csv_path, dtype=object, keep_default_na=False) # output DataFrame
 
         df_cmp = df_out.compare(df_ans)
         self.assertEqual(len(df_cmp.index), 0)
