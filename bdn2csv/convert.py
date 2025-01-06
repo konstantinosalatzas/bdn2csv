@@ -15,7 +15,7 @@ def convert(xml_path: str, csv_path: str):
         is_first_line = True
         for line in rf:
             if is_first_line:
-                line = line.replace("Type_", "Type") # When "Type" is in standard AND non-standard attributes
+                line = line.replace("Type_", "Type") # when "Type" is in standard and non-standard attributes
                 is_first_line = False
             line = line.replace('"""', '"')
             wf.write(line)
