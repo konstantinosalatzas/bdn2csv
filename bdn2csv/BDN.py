@@ -82,7 +82,7 @@ class BDN:
                     if attribute.attrib['name'] == "Description":
                         bdn[attribute.attrib['name']].append("\""+attribute.attrib['value']+"\"")
                     else:
-                        # Handle the case when "Type" is in standard AND non-standard attributes
+                        # Handle the case when "Type" is in standard and non-standard attributes
                         if attribute.attrib['name'] == "Type":
                             bdn["Type_"].append(attribute.attrib['value'])
                         else:
