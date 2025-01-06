@@ -203,7 +203,7 @@ class TestParse(unittest.TestCase):
 
     def test_parse_types(self):
         list_ans = self.df_ans.columns.tolist() # expected list
-        list_ans = [attr.replace("Type.1", "Type") for attr in list_ans] # when "Type" in in standard AND non-standard attributes
+        list_ans = [attr.replace("Type.1", "Type") for attr in list_ans] # when "Type" in in standard and non-standard attributes
 
         self.bdn.parse_types()
         list_out = self.bdn.std_attrs + self.bdn.non_std_attrs # Output list
