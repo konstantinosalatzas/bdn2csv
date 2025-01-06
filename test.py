@@ -84,7 +84,6 @@ class TestConvert(unittest.TestCase):
                 </Dependencies>
             </Resource>
         </Resources>""" # input XML
-        # Expected DataFrame
         df_ans = pd.DataFrame(
             {"Name": ["Warehouse", "Loading Dock", "Section"],
              "Path": ["Warehouse", "Warehouse\Loading Dock", "Warehouse\Section"],
@@ -96,7 +95,7 @@ class TestConvert(unittest.TestCase):
              "Type.1": ["Test", "Test", "Test"],
              "Tags": ["Logistics", "", "Logistics"],
              "Related Terms": ["", "", "Picking,Warehouse\Loading Dock"]}
-        )
+        ) # expected DataFrame
 
         csv_path = "./data/Test.csv"
         bdn2csv.convert(xml_string, csv_path)
