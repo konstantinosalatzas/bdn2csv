@@ -233,8 +233,8 @@ class TestAddMultipleValue(unittest.TestCase):
         self.assertEqual(values_out, values_ans)
 
     def test_add_multiple_value_to_not_empty(self):
-        values = "Picking"
-        value = "Warehouse\Loading Dock"
+        values = "Picking" # input values string
+        value = "Warehouse\Loading Dock" # input value string
         values_ans = "Picking,Warehouse\Loading Dock" # expected string
         
         values_out = bdn2csv.add_multiple_value(values, value) # output string
