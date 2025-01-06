@@ -15,7 +15,7 @@ class BDN:
             self.xml = et.fromstring(xml_path) # parse XML from string
         self.types = [] # types of attributes
         self.std_attrs = ["Name", "Path"] # standard attributes
-        self.non_std_attrs = [] # list of unique non-standard attributes
+        self.non_std_attrs = [] # non-standard attributes
         self.df = pd.DataFrame() # DataFrame BDN representation
     
     def parse_types(self) -> list[str]:
