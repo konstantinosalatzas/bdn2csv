@@ -83,7 +83,7 @@ class TestConvert(unittest.TestCase):
                     </dependency>
                 </Dependencies>
             </Resource>
-        </Resources>"""
+        </Resources>""" # input XML
         # Expected DataFrame
         df_ans = pd.DataFrame(
             {"Name": ["Warehouse", "Loading Dock", "Section"],
