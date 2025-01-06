@@ -216,7 +216,7 @@ class TestParse(unittest.TestCase):
 
         self.bdn.parse_types()
         self.bdn.parse_values()
-        df_out = self.bdn.df # Output DataFrame
+        df_out = self.bdn.df # output DataFrame
         if "Description" in df_out.columns.tolist():
             df_out['Description'] = df_out['Description'].apply(lambda x: str(x).strip('"'))
         
