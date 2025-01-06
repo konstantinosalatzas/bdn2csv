@@ -202,7 +202,7 @@ class TestParse(unittest.TestCase):
         ) # expected DataFrame
 
     def test_parse_types(self):
-        list_ans = self.df_ans.columns.tolist() # Expected list
+        list_ans = self.df_ans.columns.tolist() # expected list
         list_ans = [attr.replace("Type.1", "Type") for attr in list_ans] # when "Type" in in standard AND non-standard attributes
 
         self.bdn.parse_types()
