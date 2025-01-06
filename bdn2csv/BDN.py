@@ -10,9 +10,9 @@ def add_multiple_value(values: str, value: str) -> str:
 class BDN:
     def __init__(self, xml_path: str):
         try:
-            self.xml = et.parse(xml_path)
-        except: # In testing the XML is parsed from string
-            self.xml = et.fromstring(xml_path)
+            self.xml = et.parse(xml_path) # parse XML from file
+        except:
+            self.xml = et.fromstring(xml_path) # parse XML from string
         self.types = [] # Unique types of attributes
         self.std_attrs = ["Name", "Path"] # list of unique standard attributes
         self.non_std_attrs = [] # list of unique non-standard attributes
