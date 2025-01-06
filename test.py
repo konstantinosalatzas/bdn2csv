@@ -207,7 +207,7 @@ class TestParse(unittest.TestCase):
 
         self.bdn.parse_types()
         list_out = self.bdn.std_attrs + self.bdn.non_std_attrs # output list
-        list_out = [attr.replace("Type_", "Type") for attr in list_out] # when "Type" is in standard AND non-standard attributes
+        list_out = [attr.replace("Type_", "Type") for attr in list_out] # when "Type" is in standard and non-standard attributes
         
         self.assertListEqual(list_out, list_ans)
 
