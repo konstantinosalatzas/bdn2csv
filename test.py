@@ -212,7 +212,7 @@ class TestParse(unittest.TestCase):
         self.assertListEqual(list_out, list_ans)
 
     def test_parse_values(self):
-        self.df_ans = self.df_ans.rename(columns={"Type": "Type_", "Type.1": "Type"}) # when "Type" is in standard AND non-standard attributes
+        self.df_ans = self.df_ans.rename(columns={"Type": "Type_", "Type.1": "Type"}) # when "Type" is in standard and non-standard attributes
 
         self.bdn.parse_types()
         self.bdn.parse_values()
