@@ -16,7 +16,7 @@ class BDN:
         self.types = []
         self.std_attrs = ["Name", "Path"] # standard attributes
         self.non_std_attrs = [] # non-standard attributes
-        self.df = pd.DataFrame() # DataFrame BDN representation
+        self.df = pd.DataFrame() # BDN DataFrame representation
     
     def parse_types(self) -> list[str]:
         xml = self.xml
