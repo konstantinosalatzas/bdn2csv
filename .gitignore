@@ -1,7 +1,3 @@
 __pycache__
-
 *.xml
-!Warehouse.xml
-
 *.csv
-!Warehouse.csv
