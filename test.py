@@ -19,7 +19,7 @@ class TestConvert(unittest.TestCase):
                         <Resource identity="Logistics" type="BDNTAG"/>
                     </dependency>
                     <dependency type="I">
-                        <Resource label="Type" identity="Warehouse\Attribute0" type="BDNATTRIB">
+                        <Resource label="Type" identity="Warehouse\\Attribute0" type="BDNATTRIB">
                             <Attributes>
                                 <attribute name="Instructions" value=""/>
                                 <attribute name="Value" value="Test"/>
@@ -30,7 +30,7 @@ class TestConvert(unittest.TestCase):
                     </dependency>
                 </Dependencies>
             </Resource>
-            <Resource label="Loading Dock" identity="Warehouse\Loading Dock" type="BDNTERM">
+            <Resource label="Loading Dock" identity="Warehouse\\Loading Dock" type="BDNTERM">
                 <Attributes>
                     <attribute name="Description" value="Facility for incoming and outgoing goods"/>
                     <attribute name="Requirements" value=""/>
@@ -43,7 +43,7 @@ class TestConvert(unittest.TestCase):
                         <Resource label="Warehouse" identity="Warehouse" type="BDNTERMREF"/>
                     </dependency>
                     <dependency type="I">
-                        <Resource label="Type" identity="Warehouse\Loading Dock\Attribute0" type="BDNATTRIB">
+                        <Resource label="Type" identity="Warehouse\\Loading Dock\\Attribute0" type="BDNATTRIB">
                             <Attributes>
                                 <attribute name="Instructions" value=""/>
                                 <attribute name="Value" value="Test"/>
@@ -54,7 +54,7 @@ class TestConvert(unittest.TestCase):
                     </dependency>
                 </Dependencies>
             </Resource>
-            <Resource label="Section" identity="Warehouse\Section" type="BDNTERM">
+            <Resource label="Section" identity="Warehouse\\Section" type="BDNTERM">
                 <Attributes>
                     <attribute name="Description" value="Section of the warehouse designated for a specific product or type of product"/>
                     <attribute name="Requirements" value="Must be secure and accessible"/>
@@ -68,11 +68,11 @@ class TestConvert(unittest.TestCase):
                     </dependency>
                     <dependency type="A">
                         <Resource label="Picking" identity="Picking" type="BDNTERMREF"/>
-                        <Resource identity="Warehouse\Loading Dock" type="BDNTERMREF"/>
+                        <Resource identity="Warehouse\\Loading Dock" type="BDNTERMREF"/>
                         <Resource identity="Logistics" type="BDNTAG"/>
                     </dependency>
                     <dependency type="I">
-                        <Resource label="Type" identity="Warehouse\Section\Attribute0" type="BDNATTRIB">
+                        <Resource label="Type" identity="Warehouse\\Section\\Attribute0" type="BDNATTRIB">
                             <Attributes>
                                 <attribute name="Instructions" value=""/>
                                 <attribute name="Value" value="Test"/>
