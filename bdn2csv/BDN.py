@@ -1,9 +1,6 @@
 import pandas as pd
 import xml.etree.ElementTree as et
 
-def get_related_term_with_label():
-    return ""
-
 def add_multiple_value(values: str, value: str) -> str:
     if len(values) > 0:
         values += ","
@@ -123,7 +120,10 @@ class BDN:
                             values['Tags'] = add_multiple_value(values['Tags'], r.attrib['identity'])
                     for r in tag_or_ref.findall("Resource"):
                         if r.attrib['type'] == "BDNTERMREF": # Related Terms
-                            values['Related Terms'] = add_multiple_value(values['Related Terms'], r.attrib['identity'])
+                            if "label" not in r.attrib:
+                                values['Related Terms'] = add_multiple_value(values['Related Terms'], r.attrib['identity'])
+                            else:
+                                values['Related Terms'] = add_multiple_value(values['Related Terms'], r.attrib['identity']+"|"+r.attrib['label'])
                 for a in non_std_attrs:
                     bdn[a].append(values[a])
         
