@@ -94,7 +94,7 @@ class TestConvert(unittest.TestCase):
              "Type": ["Root", "Leaf", "Leaf"],
              "Type.1": ["Test", "Test", "Test"],
              "Tags": ["Logistics", "", "Logistics"],
-             "Related Terms": ["", "", "Picking,Warehouse\\Loading Dock"]}
+             "Related Terms": ["", "", "Picking|Picking,Warehouse\\Loading Dock"]}
         ) # expected DataFrame
 
         csv_path = "./data/Test.csv"
@@ -197,7 +197,7 @@ class TestParse(unittest.TestCase):
              "Type": ["Root", "Leaf", "Leaf"],
              "Type.1": ["Test", "Test", "Test"],
              "Tags": ["Logistics", "", "Logistics"],
-             "Related Terms": ["", "", "Picking,Warehouse\\Loading Dock"]}
+             "Related Terms": ["", "", "Picking|Picking,Warehouse\\Loading Dock"]}
         ) # expected DataFrame
 
     def test_parse_types(self):
