@@ -120,10 +120,10 @@ class BDN:
                             values['Tags'] = add_multiple_value(values['Tags'], r.attrib['identity'])
                     for r in tag_or_ref.findall("Resource"):
                         if r.attrib['type'] == "BDNTERMREF": # Related Terms
-                            value = r.attrib['identity']
                             if "label" in r.attrib:
-                                value += "|"+r.attrib['label']
-                            values['Related Terms'] = add_multiple_value(values['Related Terms'], value)
+                                values['Related Terms'] = add_multiple_value(values['Related Terms'], r.attrib['identity']+"|"+r.attrib['label'])
+                            else:
+                                values['Related Terms'] = add_multiple_value(values['Related Terms'], r.attrib['identity'])
                 for a in non_std_attrs:
                     bdn[a].append(values[a])
         
