@@ -10,9 +10,13 @@ def path2id(json_path: str):
     id2name = {}
     parentNames = []
     for item in response['items']:
-        names.append(item['name'])
-        ids.append(item['id'])
-        parentIds.append(item['parentId'] if "parentId" in item else "")
+        name = item['name']
+        id = item['id']
+        parentId = (item['parentId'] if "parentId" in item else "")
+        print(name, id, parentId)
+        names.append(name)
+        ids.append(id)
+        parentIds.append(parentId)
         id2name[item['id']] = item['name']
     for item in response['items']:
         if "parentId" in item:
