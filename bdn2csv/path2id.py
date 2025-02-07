@@ -16,5 +16,6 @@ def path2id(json_path: str):
         names.append(item['name'])
         ids.append(item['id'])
         parentIds.append(item['parentId'] if "parentId" in item else "")
+        id2name[item['id']] = item['name']
 
 path2id("/workspaces/bdn2csv/data/Response.json")
