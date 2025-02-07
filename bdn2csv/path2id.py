@@ -1,7 +1,7 @@
 import pandas as pd
 import json
 
-def path2id(json_path: str):
+def path2id(json_path: str) -> pd.DataFrame:
     with open(json_path, 'r') as f:
         response = json.load(f)
 
