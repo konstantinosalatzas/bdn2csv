@@ -5,6 +5,11 @@ def path2id(json_path: str):
     with open(json_path, 'r') as f:
         response = json.load(f)
 
+    names = []
+    ids = []
+    parentIds = []
+    parentNames = []
+
     for item in response['items']:
         print(item)
 
