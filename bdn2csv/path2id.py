@@ -10,6 +10,8 @@ def path2id(json_path: str):
     parentIds = []
     parentNames = []
 
+    id2name = {}
+
     for item in response['items']:
         names.append(item['name'])
         ids.append(item['id'])
