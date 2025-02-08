@@ -28,7 +28,18 @@ def path2id(json_path: str) -> pd.DataFrame:
 
     paths = [] # term paths
     for _, term in df.iterrows():
-        pass
+        path = term['name']
+        parentId = term['parentId']
+        parentName = term['parentName']
+        while parentId != "":
+            path = parentName+"\\"+path
+            parent = df[df['id'] == parentId].iloc[0]
+            parentId = parent['parentId']
+            parentName = parent['parentName']
+        paths.append(path)
+
+    df = pd.DataFrame({"path": paths, "id": ids})
+    print(df.head()) #dev
 
     return df
 
