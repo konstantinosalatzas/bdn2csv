@@ -25,7 +25,7 @@ def path2id(json_path: str) -> pd.DataFrame:
         parentNames.append(parentName)
 
     df = pd.DataFrame({"name": names, "id": ids, "parentId": parentIds, "parentName": parentNames})
-    print(df.head())
+    print(df.head()) #dev
     return df
 
-path2id("/workspaces/bdn2csv/data/Response.json")
+path2id("/workspaces/bdn2csv/data/Response.json") #dev
