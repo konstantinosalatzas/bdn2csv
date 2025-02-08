@@ -3,7 +3,7 @@ import json
 
 def path2id(json_path: str) -> pd.DataFrame:
     with open(json_path, 'r') as f:
-        response = json.load(f)
+        response = json.load(f) # GET /terms response JSON
 
     names = []
     ids = []
