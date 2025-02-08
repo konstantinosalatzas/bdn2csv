@@ -16,7 +16,7 @@ def path2id(json_path: str) -> pd.DataFrame:
         id = item['id']
         parentId = (item['parentId'] if "parentId" in item else "")
 
-        id2name[item['id']] = item['name']
+        id2name[id] = name
 
         names.append(name)
         ids.append(id)
