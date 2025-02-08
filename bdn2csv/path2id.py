@@ -5,11 +5,11 @@ def path2id(json_path: str) -> pd.DataFrame:
     with open(json_path, 'r') as f:
         response = json.load(f) # GET /terms response JSON
 
-    names = []
-    ids = []
-    parentIds = []
-    id2name = {}
-    parentNames = []
+    names = [] # term names
+    ids = [] # term IDS
+    parentIds = [] # term parent IDs
+    id2name = {} # maps term IDs to names
+    parentNames = [] # term parent names
 
     for item in response['items']:
         name = item['name']
