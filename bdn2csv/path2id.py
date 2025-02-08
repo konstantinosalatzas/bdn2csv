@@ -9,7 +9,6 @@ def path2id(json_path: str) -> pd.DataFrame:
     ids = [] # term IDs
     parentIds = [] # term parent IDs
     id2name = {} # map term IDs to names
-    parentNames = [] # term parent names
 
     for item in response['items']:
         name = item['name']
@@ -20,9 +19,16 @@ def path2id(json_path: str) -> pd.DataFrame:
         parentIds.append(parentId)
         id2name[id] = name
 
+    parentNames = [] # term parent names
+
     for item in response['items']:
         parentName = (id2name[item['parentId']] if "parentId" in item else "")
         parentNames.append(parentName)
+
+    paths = [] # term paths
+
+    for item in response['items']:
+        pass
 
     df = pd.DataFrame({"name": names, "id": ids, "parentId": parentIds, "parentName": parentNames})
     print(df.head()) #dev
