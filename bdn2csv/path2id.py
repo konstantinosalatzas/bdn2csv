@@ -33,7 +33,7 @@ def path2id(json_path: str) -> pd.DataFrame:
         parentName = term['parentName']
         while parentId != "":
             path = parentName+"\\"+path # prepend parent name to term name to construct the term path
-            parent = df[df['id'] == parentId].iloc[0]
+            parent = df[df['id'] == parentId].iloc[0] # the parent exists and is unique
             parentId = parent['parentId']
             parentName = parent['parentName']
         paths.append(path)
