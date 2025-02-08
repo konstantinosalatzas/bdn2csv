@@ -8,7 +8,7 @@ def path2id(json_path: str) -> pd.DataFrame:
     names = [] # term names
     ids = [] # term IDS
     parentIds = [] # term parent IDs
-    id2name = {} # maps term IDs to names
+    id2name = {} # map term IDs to names
     parentNames = [] # term parent names
 
     for item in response['items']:
