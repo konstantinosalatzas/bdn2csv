@@ -23,8 +23,6 @@ def id2name(response: dict) -> pd.DataFrame:
         parentNames.append(parentName)
 
     df = pd.DataFrame({"name": names, "id": ids, "parentId": parentIds, "parentName": parentNames})
-    print(df.head()) #dev
-
     return df
 
 def id2path(df: pd.DataFrame) -> pd.DataFrame:
@@ -43,8 +41,6 @@ def id2path(df: pd.DataFrame) -> pd.DataFrame:
         paths.append(path)
 
     df = pd.DataFrame({"path": paths, "id": ids})
-    print(df.head()) #dev
-
     return df
 
 def path2id(json_path: str) -> pd.DataFrame:
@@ -55,5 +51,3 @@ def path2id(json_path: str) -> pd.DataFrame:
     df = id2path(df)
 
     return df
-
-path2id("/workspaces/bdn2csv/data/Response.json") #dev
