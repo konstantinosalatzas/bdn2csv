@@ -243,12 +243,16 @@ class TestAddMultipleValue(unittest.TestCase):
 
 class TestPath2Id(unittest.TestCase):
     def test_id2path(self):
-        df = pd.DataFrame({"name": ["Warehouse", "Loading Dock", "Section"],
-                           "id": ["1251572", "1251573", "1251574"],
-                           "parentId": ["", "1251572", "1251572"],
-                           "parentName": ["", "Warehouse", "Warehouse"]}) # input DataFrame
-        df_ans = pd.DataFrame({"path": ["Warehouse", "Warehouse\\Loading Dock", "Warehouse\\Section"],
-                               "id": ["1251572", "1251573", "1251574"]}) # expected DataFrame
+        df = pd.DataFrame(
+            {"name": ["Warehouse", "Loading Dock", "Section"],
+             "id": ["1251572", "1251573", "1251574"],
+             "parentId": ["", "1251572", "1251572"],
+             "parentName": ["", "Warehouse", "Warehouse"]}
+        ) # input DataFrame
+        df_ans = pd.DataFrame(
+            {"path": ["Warehouse", "Warehouse\\Loading Dock", "Warehouse\\Section"],
+             "id": ["1251572", "1251573", "1251574"]}
+        ) # expected DataFrame
 
         df_out = bdn2csv.id2path(df)
 
