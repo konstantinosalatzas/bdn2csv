@@ -242,7 +242,14 @@ class TestAddMultipleValue(unittest.TestCase):
         self.assertEqual(values_out, values_ans)
 
 class TestPath2Id(unittest.TestCase):
-    pass
+    def test_path2id(self):
+        pass
+
+    def test_id2name(self):
+        pass
+
+    def test_id2path(self):
+        pass
 
 if __name__ == "__main__":
     unittest.main()
