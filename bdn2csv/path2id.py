@@ -1,7 +1,7 @@
 import pandas as pd
 import json
 
-def id2name(response):
+def id2name(response: dict) -> pd.DataFrame:
     names = [] # term names
     ids = [] # term IDs
     parentIds = [] # term parent IDs
@@ -27,7 +27,7 @@ def id2name(response):
 
     return df
 
-def id2path(df):
+def id2path(df: pd.DataFrame) -> pd.DataFrame:
     ids = df['id'].values.tolist()
     paths = [] # term paths
 
