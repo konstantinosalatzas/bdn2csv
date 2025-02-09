@@ -250,5 +250,10 @@ class TestPath2Id(unittest.TestCase):
         df_ans = pd.DataFrame({"path": ["Warehouse", "Warehouse\\Loading Dock", "Warehouse\\Section"],
                                "id": ["1251572", "1251573", "1251574"]}) # expected DataFrame
 
+        df_out = bdn2csv.id2path(df)
+
+        df_cmp = df_out.compare(df_ans)
+        self.assertEqual(len(df_cmp.index), 0)
+
 if __name__ == "__main__":
     unittest.main()
