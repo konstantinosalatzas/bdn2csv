@@ -25,6 +25,25 @@ def id2name(response):
 
     return df
 
+def id2path(df):
+    ids = df['id'].values.tolist()
+    paths = [] # term paths
+    for _, term in df.iterrows():
+        path = term['name']
+        parentId = term['parentId']
+        parentName = term['parentName']
+        while parentId != "": # O(max path length)
+            path = parentName+"\\"+path # prepend parent name to term name to construct the term path
+            parent = df[df['id'] == parentId].iloc[0] # the parent exists and is unique
+            parentId = parent['parentId'] # update parent ID
+            parentName = parent['parentName'] # update parent name
+        paths.append(path)
+
+    df = pd.DataFrame({"path": paths, "id": ids})
+    print(df.head()) #dev
+
+    return df
+
 def path2id(json_path: str) -> pd.DataFrame:
     with open(json_path, 'r') as f:
         response = json.load(f) # GET /terms response JSON
@@ -45,7 +64,6 @@ def path2id(json_path: str) -> pd.DataFrame:
         paths.append(path)
 
     df = pd.DataFrame({"path": paths, "id": ids})
-    print(df.head()) #dev
 
     return df
 
