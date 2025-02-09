@@ -47,11 +47,8 @@ def id2path(df):
 def path2id(json_path: str) -> pd.DataFrame:
     with open(json_path, 'r') as f:
         response = json.load(f) # GET /terms response JSON
-
     df = id2name(response)
-
     df = id2path(df)
-
     return df
 
 path2id("/workspaces/bdn2csv/data/Response.json") #dev
