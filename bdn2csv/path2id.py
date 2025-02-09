@@ -22,6 +22,7 @@ def id2name(response):
 
     df = pd.DataFrame({"name": names, "id": ids, "parentId": parentIds, "parentName": parentNames})
     print(df.head()) #dev
+
     return df
 
 def path2id(json_path: str) -> pd.DataFrame:
