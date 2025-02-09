@@ -242,15 +242,13 @@ class TestAddMultipleValue(unittest.TestCase):
         self.assertEqual(values_out, values_ans)
 
 class TestPath2Id(unittest.TestCase):
-    def test_id2name(self):
+    def test_id2path(self):
         df = pd.DataFrame({"name": ["Warehouse", "Loading Dock", "Section"],
                            "id": ["1251572", "1251573", "1251574"],
                            "parentId": ["", "1251572", "1251572"],
                            "parentName": ["", "Warehouse", "Warehouse"]})
-        pass
-
-    def test_id2path(self):
-        pass
+        df_ans = pd.DataFrame({"path": ["Warehouse", "Warehouse\\Loading Dock", "Warehouse\\Section"],
+                               "id": ["1251572", "1251573", "1251574"]}) # expected DataFrame
 
 if __name__ == "__main__":
     unittest.main()
