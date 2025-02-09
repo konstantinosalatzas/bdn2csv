@@ -21,6 +21,7 @@ def id2name(response):
         parentNames.append(parentName)
 
     df = pd.DataFrame({"name": names, "id": ids, "parentId": parentIds, "parentName": parentNames})
+    print(df.head()) #dev
     return df
 
 def path2id(json_path: str) -> pd.DataFrame:
@@ -28,7 +29,6 @@ def path2id(json_path: str) -> pd.DataFrame:
         response = json.load(f) # GET /terms response JSON
 
     df = id2name(response)
-    print(df.head()) #dev
 
     ids = df['id'].values.tolist()
     paths = [] # term paths
