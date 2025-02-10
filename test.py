@@ -243,7 +243,11 @@ class TestAddMultipleValue(unittest.TestCase):
 
 class TestPath2Id(unittest.TestCase):
     def test_id2name(self):
-        pass
+        response = {
+            'items': [{'name': "Warehouse", 'id': "1251572", 'parentId': ""},
+                      {'name': "Loading Dock", 'id': "1251573", 'parentId': "1251572"},
+                      {'name': "Section", 'id': "1251574", 'parentId': "1251572"}]
+        }
 
     def test_id2path(self):
         df = pd.DataFrame(
