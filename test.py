@@ -283,6 +283,10 @@ class TestPath2Id(unittest.TestCase):
                       {"name": "Loading Dock", "id": "1251573", "parentId": "1251572"},
                       {"name": "Section", "id": "1251574", "parentId": "1251572"}]
         }""" # input JSON string
+        df_ans = pd.DataFrame(
+            {"path": ["Warehouse", "Warehouse\\Loading Dock", "Warehouse\\Section"],
+             "id": ["1251572", "1251573", "1251574"]}
+        ) # expected DataFrame
 
 if __name__ == "__main__":
     unittest.main()
