@@ -48,7 +48,7 @@ def path2id(json_path: str) -> pd.DataFrame:
         f = open(json_path, 'r')
         response = json.load(f) # GET /terms response JSON file
     except:
-        response = json.loads(json_path)
+        response = json.loads(json_path) # GET /terms response JSON string
 
     df = id2name(response)
     df = id2path(df)
