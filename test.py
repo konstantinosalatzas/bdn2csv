@@ -278,7 +278,11 @@ class TestPath2Id(unittest.TestCase):
         self.assertEqual(len(df_cmp.index), 0)
 
     def test_path2id(self):
-        pass
+        json_string = """{
+            "items": [{"name": "Warehouse", "id": "1251572"},
+                      {"name": "Loading Dock", "id": "1251573", "parentId": "1251572"},
+                      {"name": "Section", "id": "1251574", "parentId": "1251572"}]
+        }"""
 
 if __name__ == "__main__":
     unittest.main()
