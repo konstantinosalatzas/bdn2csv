@@ -248,6 +248,12 @@ class TestPath2Id(unittest.TestCase):
                       {'name': "Loading Dock", 'id': "1251573", 'parentId': "1251572"},
                       {'name': "Section", 'id': "1251574", 'parentId': "1251572"}]
         } # input JSON dict
+        df = pd.DataFrame(
+            {"name": ["Warehouse", "Loading Dock", "Section"],
+             "id": ["1251572", "1251573", "1251574"],
+             "parentId": ["", "1251572", "1251572"],
+             "parentName": ["", "Warehouse", "Warehouse"]}
+        ) # expected DataFrame
 
     def test_id2path(self):
         df = pd.DataFrame(
