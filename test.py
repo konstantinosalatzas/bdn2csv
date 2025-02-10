@@ -255,7 +255,7 @@ class TestPath2Id(unittest.TestCase):
              "parentName": ["", "Warehouse", "Warehouse"]}
         ) # expected DataFrame
 
-        df_out = bdn2csv.id2name(response)
+        df_out = bdn2csv.id2name(response) # output DataFrame
 
         df_cmp = df_out.compare(df_ans)
         self.assertEqual(len(df_cmp.index), 0)
@@ -272,7 +272,7 @@ class TestPath2Id(unittest.TestCase):
              "id": ["1251572", "1251573", "1251574"]}
         ) # expected DataFrame
 
-        df_out = bdn2csv.id2path(df)
+        df_out = bdn2csv.id2path(df) # output DataFrame
 
         df_cmp = df_out.compare(df_ans)
         self.assertEqual(len(df_cmp.index), 0)
@@ -288,7 +288,7 @@ class TestPath2Id(unittest.TestCase):
              "id": ["1251572", "1251573", "1251574"]}
         ) # expected DataFrame
 
-        df_out = bdn2csv.path2id(json_string)
+        df_out = bdn2csv.path2id(json_string) # output DataFrame
 
         df_cmp = df_out.compare(df_ans)
         self.assertEqual(len(df_cmp.index), 0)
