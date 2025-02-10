@@ -277,5 +277,8 @@ class TestPath2Id(unittest.TestCase):
         df_cmp = df_out.compare(df_ans)
         self.assertEqual(len(df_cmp.index), 0)
 
+    def test_path2id(self):
+        pass
+
 if __name__ == "__main__":
     unittest.main()
