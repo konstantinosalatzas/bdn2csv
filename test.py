@@ -242,6 +242,24 @@ class TestAddMultipleValue(unittest.TestCase):
         self.assertEqual(values_out, values_ans)
 
 class TestPath2Id(unittest.TestCase):
+    def test_id2name(self):
+        response = {
+            "items": [{"name": "Warehouse", "id": "1251572"},
+                      {"name": "Loading Dock", "id": "1251573", "parentId": "1251572"},
+                      {"name": "Section", "id": "1251574", "parentId": "1251572"}]
+        } # input JSON dict
+        df_ans = pd.DataFrame(
+            {"name": ["Warehouse", "Loading Dock", "Section"],
+             "id": ["1251572", "1251573", "1251574"],
+             "parentId": ["", "1251572", "1251572"],
+             "parentName": ["", "Warehouse", "Warehouse"]}
+        ) # expected DataFrame
+
+        df_out = bdn2csv.id2name(response)
+
+        df_cmp = df_out.compare(df_ans)
+        self.assertEqual(len(df_cmp.index), 0)
+
     def test_id2path(self):
         df = pd.DataFrame(
             {"name": ["Warehouse", "Loading Dock", "Section"],
