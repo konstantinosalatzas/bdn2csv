@@ -15,7 +15,6 @@ json_path = args.json_path
 csv_path = args.csv_path
 
 df = bdn2csv.path2id(json_path)
-
 df.to_csv(csv_path, index=False)
 
 if args.verbose:
