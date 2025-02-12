@@ -16,8 +16,6 @@ args = parser.parse_args()
 in_path = args.in_path
 out_path = args.out_path
 
-bdn2csv.convert(in_path, out_path)
-
-if args.verbose:
+if not args.path2id:
+    bdn2csv.convert(in_path, out_path)
     df = pd.read_csv(out_path)
-    print(df.head())
