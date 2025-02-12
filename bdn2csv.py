@@ -16,8 +16,8 @@ args = parser.parse_args()
 in_path = args.in_path
 out_path = args.out_path
 
-bdn2csv.convert(xml_path, csv_path)
+bdn2csv.convert(in_path, out_path)
 
 if args.verbose:
-    df = pd.read_csv(csv_path)
+    df = pd.read_csv(out_path)
     print(df.head())
