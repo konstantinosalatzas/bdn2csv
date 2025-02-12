@@ -8,3 +8,5 @@ parser.add_argument("json_path", type=str,
 parser.add_argument("-v", "--verbose", action="store_true",
                     help="activate output verbosity")
 args = parser.parse_args()
+
+json_path = args.json_path
