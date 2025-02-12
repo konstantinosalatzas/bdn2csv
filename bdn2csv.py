@@ -4,10 +4,10 @@ import pandas as pd
 
 parser = argparse.ArgumentParser(prog="bdn2csv",
                                  description="Convert SAS BDN XML Export file to CSV Import file")
-parser.add_argument("xml_path", type=str,
-                    help="XML Export file path")
-parser.add_argument("csv_path", type=str,
-                    help="CSV Import file path")
+parser.add_argument("in_path", type=str,
+                    help="input file path")
+parser.add_argument("out_path", type=str,
+                    help="output file path")
 parser.add_argument("--path2id", action="store_true")
 parser.add_argument("-v", "--verbose", action="store_true",
                     help="activate output verbosity")
