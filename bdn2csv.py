@@ -19,3 +19,7 @@ out_path = args.out_path
 if not args.path2id:
     bdn2csv.convert(in_path, out_path)
     df = pd.read_csv(out_path)
+
+if args.path2id:
+    df = bdn2csv.path2id(in_path)
+    df.to_csv(out_path, index=False)
