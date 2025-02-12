@@ -13,8 +13,8 @@ parser.add_argument("-v", "--verbose", action="store_true",
                     help="activate output verbosity")
 args = parser.parse_args()
 
-xml_path = args.xml_path
-csv_path = args.csv_path
+in_path = args.in_path
+out_path = args.out_path
 
 bdn2csv.convert(xml_path, csv_path)
 
