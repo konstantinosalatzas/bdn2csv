@@ -23,3 +23,6 @@ if not args.path2id:
 if args.path2id:
     df = bdn2csv.path2id(in_path)
     df.to_csv(out_path, index=False)
+
+if args.verbose:
+    print(df.head())
