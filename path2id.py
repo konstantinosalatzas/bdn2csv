@@ -10,3 +10,5 @@ parser.add_argument("-v", "--verbose", action="store_true",
 args = parser.parse_args()
 
 json_path = args.json_path
+
+bdn2csv.path2id(json_path)
