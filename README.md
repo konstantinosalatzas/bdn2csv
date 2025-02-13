@@ -44,3 +44,7 @@ git clone https://github.com/konstantinosalatzas/bdn2csv.git
 cd bdn2csv
 python -m pip install bdn2csv
 ```
+
+## Extra features
+
+### path2id
