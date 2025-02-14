@@ -48,3 +48,10 @@ python -m pip install bdn2csv
 ## Extra features
 
 ### path2id
+
+Example:
+
+```sh
+cd bdn2csv
+python bdn2csv.py --path2id "./Response.json" "./path-id.csv"
+```
