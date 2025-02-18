@@ -55,7 +55,7 @@ The path2id feature that transforms SAS BDN REST API GET /terms response JSON in
 * term path and id as columns,
 * each row corresponding to a term
 
-representing the one-to-one mapping between term paths and ids.
+containing the one-to-one mapping between term paths and ids.
 
 Example of usage as a CLI:
 
