@@ -53,7 +53,7 @@ The path2id feature transforms SAS BDN REST API GET /terms response JSON into a 
 * term path and id as columns
 * each row corresponding to a term
 
-Example:
+Example of usage as a CLI:
 
 ```sh
 cd bdn2csv
