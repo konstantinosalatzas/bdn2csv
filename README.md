@@ -9,7 +9,7 @@ As the SAS BDN can be:
 
 bdn2csv transforms an XML Export file into an equivalent CSV Import file:
 
-* for a user to edit it manually as a spreadsheet
+* for a user to edit it manually as a spreadsheet,
 
 * for a developer to process it programmatically as a table
 
