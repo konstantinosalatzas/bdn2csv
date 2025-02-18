@@ -49,6 +49,10 @@ python -m pip install bdn2csv
 
 ### path2id
 
+The path2id feature transforms SAS BDN REST API GET /terms response JSON into a CSV file with:
+* term path and id as columns
+* each row corresponding to a term
+
 Example:
 
 ```sh
