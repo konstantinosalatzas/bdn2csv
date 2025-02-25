@@ -3,7 +3,7 @@ import networkx as nx
 
 class Viz:
     def __init__(self):
-        pass
+        self.G = nx.DiGraph()
 
     def visualize(self):
         pass
