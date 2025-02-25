@@ -1,7 +1,7 @@
 import pandas as pd
 import networkx as nx
 
-class Viz:
+class BDN:
     def __init__(self):
         self.G = nx.DiGraph() # BDN as a directed graph
 
