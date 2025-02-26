@@ -10,3 +10,7 @@ class BDN:
 
     def visualize(self):
         pass
+
+#dev
+bdn = BDN()
+print(bdn.G)
