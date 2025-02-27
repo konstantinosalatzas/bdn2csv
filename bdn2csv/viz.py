@@ -12,7 +12,10 @@ class BDN:
     def visualize(self):
         pass
 
-#dev
+'''dev'''
+
+csv_path = "/workspaces/bdn2csv/data/Import.csv"
+
 bdn = BDN()
-bdn.construct("/workspaces/bdn2csv/data/Import.csv")
+bdn.construct(csv_path)
 print(bdn.G)
