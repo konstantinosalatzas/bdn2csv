@@ -5,7 +5,7 @@ class BDN:
     def __init__(self):
         self.G = nx.DiGraph() # BDN as a directed graph
 
-    def construct(self):
+    def construct(self, csv_path):
         G = self.G
 
     def visualize(self):
