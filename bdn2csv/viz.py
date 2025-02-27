@@ -9,12 +9,12 @@ class BDN:
         G = self.G
         df = pd.read_csv(csv_path)
         for _, term in df.iterrows():
-            pass
+            G.add_node(term['Path'])
 
     def visualize(self):
         pass
 
-'''dev'''
+#dev
 
 csv_path = "/workspaces/bdn2csv/data/Import.csv"
 
