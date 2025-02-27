@@ -6,7 +6,7 @@ class BDN:
         self.G = nx.DiGraph() # BDN as a directed graph
 
     def construct(self):
-        pass
+        G = self.G
 
     def visualize(self):
         pass
