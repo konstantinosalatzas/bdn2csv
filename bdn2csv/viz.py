@@ -14,4 +14,5 @@ class BDN:
 
 #dev
 bdn = BDN()
+bdn.construct()
 print(bdn.G)
