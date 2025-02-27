@@ -14,5 +14,5 @@ class BDN:
 
 #dev
 bdn = BDN()
-bdn.construct()
+bdn.construct("/workspaces/bdn2csv/data/Import.csv")
 print(bdn.G)
