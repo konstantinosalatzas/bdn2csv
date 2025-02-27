@@ -7,8 +7,8 @@ class BDN:
 
     def construct(self, csv_path):
         G = self.G
-        bdn = pd.read_csv(csv_path)
-        for _, term in bdn.iterrows():
+        df = pd.read_csv(csv_path)
+        for _, term in df.iterrows():
             pass
 
     def visualize(self):
