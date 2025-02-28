@@ -9,7 +9,7 @@ class BDN:
         G = self.G
         df = pd.read_csv(csv_path)
         for _, term in df.iterrows():
-            G.add_node(term['Path'])
+            G.add_node(term['Path']) # add terms as nodes to the graph
 
     def visualize(self):
         pass
