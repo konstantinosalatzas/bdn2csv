@@ -18,6 +18,9 @@ class BDN:
         for _, term in df.iterrows():
             G.add_node(term['Path']) # add terms as nodes to the graph
 
+    def add_edges(self):
+        pass
+
     def visualize(self):
         pass
 
