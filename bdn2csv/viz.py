@@ -14,3 +14,8 @@ class BDN:
 
     def visualize(self):
         pass
+
+#dev
+csv_path = "/workspaces/bdn2csv/data/Import.csv"
+bdn = BDN(csv_path)
+print(bdn.G)
