@@ -5,9 +5,9 @@ class BDN:
     def __init__(self, csv_path: str):
         self.G = nx.DiGraph() # BDN as a directed graph
         self.df = pd.read_csv(csv_path) # BDN DataFrame representation
-        self.construct(csv_path)
+        self.construct()
 
-    def construct(self, csv_path: str):
+    def construct(self):
         G = self.G
         df = self.df
         for _, term in df.iterrows():
