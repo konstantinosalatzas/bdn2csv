@@ -11,6 +11,7 @@ class BDN:
         G = self.G
         df = self.df
         self.add_nodes()
+        self.add_edges()
 
     def add_nodes(self):
         G = self.G
