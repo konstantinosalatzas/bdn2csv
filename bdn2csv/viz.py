@@ -10,11 +10,13 @@ class BDN:
     def construct(self):
         G = self.G
         df = self.df
-        for _, term in df.iterrows():
-            G.add_node(term['Path']) # add terms as nodes to the graph
+        self.add_nodes()
 
     def add_nodes(self):
-        pass
+        G = self.G
+        df = self.df
+        for _, term in df.iterrows():
+            G.add_node(term['Path']) # add terms as nodes to the graph
 
     def visualize(self):
         pass
