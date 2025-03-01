@@ -8,8 +8,6 @@ class BDN:
         self.construct()
 
     def construct(self):
-        G = self.G
-        df = self.df
         self.add_nodes()
         self.add_edges()
 
