@@ -2,7 +2,7 @@ import pandas as pd
 import networkx as nx
 
 class BDN:
-    def __init__(self, csv_path):
+    def __init__(self, csv_path: str):
         self.G = nx.DiGraph() # BDN as a directed graph
         self.construct(csv_path)
 
