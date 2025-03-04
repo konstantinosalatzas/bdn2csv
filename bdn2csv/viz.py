@@ -20,6 +20,8 @@ class BDN:
     def add_edges(self):
         G = self.G
         df = self.df
+        for _, term in df.iterrows():
+            pass
 
     def visualize(self):
         pass
