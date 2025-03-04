@@ -23,7 +23,8 @@ class BDN:
         pass # Add edge from parent
         for _, term in df.iterrows():
             related_terms = str(term['Related Terms']).split(",")
-            pass # Add edges between related terms
+            for related_term in related_terms:
+                pass # Add edges between related terms
 
     def visualize(self):
         pass
