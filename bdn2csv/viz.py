@@ -21,7 +21,7 @@ class BDN:
         G = self.G
         df = self.df
         for _, term in df.iterrows():
-            pass
+            related_terms = str(term['Related Terms']).split(",")
 
     def visualize(self):
         pass
