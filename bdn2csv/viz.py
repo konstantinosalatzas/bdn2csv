@@ -18,7 +18,8 @@ class BDN:
             G.add_node(term['Path']) # add terms as nodes to the graph
 
     def add_edges(self):
-        pass
+        G = self.G
+        df = self.df
 
     def visualize(self):
         pass
