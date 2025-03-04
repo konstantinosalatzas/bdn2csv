@@ -8,10 +8,18 @@ class BDN:
         self.construct()
 
     def construct(self):
+        self.add_nodes()
+        self.add_edges() # add edges after adding all nodes
+
+    def add_nodes(self):
         G = self.G
         df = self.df
         for _, term in df.iterrows():
             G.add_node(term['Path']) # add terms as nodes to the graph
+
+    def add_edges(self):
+        G = self.G
+        df = self.df
 
     def visualize(self):
         pass
