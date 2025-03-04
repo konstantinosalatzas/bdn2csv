@@ -25,7 +25,6 @@ class BDN:
             related_terms = str(term['Related Terms']).split(",")
             for related_term in related_terms:
                 if related_term in G:
-                    print(related_term)
                     pass # Add edges between related term
 
     def visualize(self):
