@@ -20,6 +20,7 @@ class BDN:
     def add_edges(self):
         G = self.G
         df = self.df
+        pass # Add edge from parent
         for _, term in df.iterrows():
             related_terms = str(term['Related Terms']).split(",")
 
