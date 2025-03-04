@@ -24,7 +24,7 @@ class BDN:
         for _, term in df.iterrows():
             related_terms = str(term['Related Terms']).split(",")
             for related_term in related_terms:
-                if related_term in G:
+                if related_term.split("|")[0] in G:
                     pass # Add edges between related term
 
     def visualize(self):
