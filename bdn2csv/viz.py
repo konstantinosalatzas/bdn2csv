@@ -6,7 +6,8 @@ def get_parent_path(term_path: str) -> str:
     return parent_path
 
 def get_related_term_path(related_term):
-    pass
+    related_term_path = related_term.split("|")[0]
+    return related_term_path
 
 def get_related_term_label(related_term):
     pass
