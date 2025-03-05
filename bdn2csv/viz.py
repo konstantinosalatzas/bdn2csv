@@ -7,6 +7,9 @@ def get_parent_path(term_path):
 def get_related_term_path(related_term):
     pass
 
+def get_related_term_label(related_term):
+    pass
+
 class BDN:
     def __init__(self, csv_path: str):
         self.G = nx.DiGraph() # BDN as a directed graph
