@@ -23,6 +23,7 @@ class BDN:
         for _, term in df.iterrows():
             parent = "\\".join(term['Path'].split("\\")[0:-1]) # parent path
             print(term['Path'], parent)
+            G.add_edge(parent, term['Path'])
             related_terms = str(term['Related Terms']).split(",")
             for related_term in related_terms:
                 related_term_path = related_term.split("|")[0]
