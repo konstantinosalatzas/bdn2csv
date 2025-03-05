@@ -20,8 +20,8 @@ class BDN:
     def add_edges(self):
         G = self.G
         df = self.df
-        pass # Add edge from parent
         for _, term in df.iterrows():
+            pass # Add edge from parent
             related_terms = str(term['Related Terms']).split(",")
             for related_term in related_terms:
                 related_term_path = related_term.split("|")[0]
