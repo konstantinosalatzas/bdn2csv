@@ -1,7 +1,7 @@
 import pandas as pd
 import networkx as nx
 
-def get_parent_path(term_path):
+def get_parent_path(term_path: str) -> str:
     parent_path = "\\".join(term_path.split("\\")[0:-1])
     return parent_path
 
