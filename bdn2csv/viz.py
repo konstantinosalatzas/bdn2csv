@@ -5,7 +5,7 @@ def get_parent_path(term_path: str) -> str:
     parent_path = "\\".join(term_path.split("\\")[0:-1])
     return parent_path
 
-def get_related_term_path(related_term):
+def get_related_term_path(related_term: str) -> str:
     related_term_path = related_term.split("|")[0]
     return related_term_path
 
