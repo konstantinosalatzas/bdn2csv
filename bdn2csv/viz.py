@@ -1,6 +1,9 @@
 import pandas as pd
 import networkx as nx
 
+def get_parent_path(term_path):
+    pass
+
 class BDN:
     def __init__(self, csv_path: str):
         self.G = nx.DiGraph() # BDN as a directed graph
