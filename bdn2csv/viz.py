@@ -2,7 +2,8 @@ import pandas as pd
 import networkx as nx
 
 def get_parent_path(term_path):
-    pass
+    parent = "\\".join(term_path.split("\\")[0:-1]) # parent path
+    return parent
 
 def get_related_term_path(related_term):
     pass
