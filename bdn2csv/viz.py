@@ -31,7 +31,7 @@ class BDN:
         G = self.G
         df = self.df
         for _, term in df.iterrows():
-            parent = "\\".join(term['Path'].split("\\")[0:-1]) # parent path
+            parent = get_parent_path(term['Path'])
             G.add_edge(parent, term['Path'])
             related_terms = str(term['Related Terms']).split(",")
             for related_term in related_terms:
