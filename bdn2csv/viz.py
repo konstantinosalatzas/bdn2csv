@@ -40,7 +40,8 @@ class BDN:
                 related_term_path = get_related_term_path(related_term)
                 related_term_label = get_related_term_label(related_term)
                 if related_term_path in G:
-                    pass # Add edges between related term
+                    G.add_edge(term['Path'], related_term_path)
+                    G.add_edge(related_term_path, term['Path'])
 
     def visualize(self):
         pass
