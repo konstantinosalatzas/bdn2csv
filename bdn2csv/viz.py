@@ -44,6 +44,7 @@ class BDN:
                     G.add_edge(related_term_path, term['Path'], label=related_term_label)
 
     def visualize(self):
+        G = self.G
         nx.draw(G)
         pass
 
@@ -51,3 +52,4 @@ class BDN:
 csv_path = "/workspaces/bdn2csv/data/Import.csv"
 bdn = BDN(csv_path)
 print(bdn.G)
+bdn
