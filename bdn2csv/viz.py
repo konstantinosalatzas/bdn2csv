@@ -1,5 +1,6 @@
 import pandas as pd
 import networkx as nx
+import matplotlib.pyplot as plt
 
 def get_parent_path(term_path: str) -> str:
     parent_path = "\\".join(term_path.split("\\")[0:-1])
