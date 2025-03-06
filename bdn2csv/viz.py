@@ -45,7 +45,7 @@ class BDN:
                     G.add_edge(term['Path'], related_term_path, label=related_term_label)
                     G.add_edge(related_term_path, term['Path'], label=related_term_label)
 
-    def visualize(self, png_path):
+    def visualize(self, png_path: str):
         G = self.G
         nx.draw_networkx(G)
         plt.savefig(png_path)
