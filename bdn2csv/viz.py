@@ -48,7 +48,6 @@ class BDN:
         G = self.G
         nx.draw(G)
         plt.savefig("/workspaces/bdn2csv/data/viz.png")
-        pass
 
 #dev
 csv_path = "/workspaces/bdn2csv/data/Import.csv"
