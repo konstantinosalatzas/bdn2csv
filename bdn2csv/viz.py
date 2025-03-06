@@ -11,7 +11,7 @@ def get_related_term_path(related_term: str) -> str:
     return related_term_path
 
 def get_related_term_label(related_term: str) -> str:
-    related_term_label = related_term.split("|")[1] if "|" in related_term else ""
+    related_term_label = related_term.split("|")[1] if "|" in related_term else "" # if related term has label
     return related_term_label
 
 class BDN:
