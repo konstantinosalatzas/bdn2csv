@@ -46,7 +46,7 @@ class BDN:
 
     def visualize(self):
         G = self.G
-        nx.draw(G)
+        nx.draw_networkx(G)
         plt.savefig("/workspaces/bdn2csv/data/viz.png")
 
 #dev
