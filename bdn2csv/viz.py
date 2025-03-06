@@ -45,13 +45,14 @@ class BDN:
                     G.add_edge(term['Path'], related_term_path, label=related_term_label)
                     G.add_edge(related_term_path, term['Path'], label=related_term_label)
 
-    def visualize(self):
+    def visualize(self, png_path):
         G = self.G
         nx.draw_networkx(G)
-        plt.savefig("/workspaces/bdn2csv/data/viz.png")
+        plt.savefig(png_path)
 
 #dev
 csv_path = "/workspaces/bdn2csv/data/Import.csv"
 bdn = BDN(csv_path)
 print(bdn.G)
-bdn.visualize()
+png_path = "/workspaces/bdn2csv/data/viz.png"
+bdn.visualize(png_path)
