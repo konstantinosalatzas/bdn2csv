@@ -52,4 +52,4 @@ class BDN:
 csv_path = "/workspaces/bdn2csv/data/Import.csv"
 bdn = BDN(csv_path)
 print(bdn.G)
-bdn
+bdn.visualize()
