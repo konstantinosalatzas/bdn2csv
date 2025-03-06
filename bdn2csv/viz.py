@@ -35,7 +35,7 @@ class BDN:
         df = self.df
         for _, term in df.iterrows():
             parent = get_parent_path(term['Path'])
-            if parent != "":
+            if parent != "": # if parent exists
                 G.add_edge(parent, term['Path'])
             related_terms = str(term['Related Terms']).split(",")
             for related_term in related_terms:
