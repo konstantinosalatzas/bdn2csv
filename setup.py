@@ -10,6 +10,8 @@ setup(
         'bdn2csv'
     ],
     install_requires=[
-        'pandas'
+        'pandas',
+        'networkx',
+        'matplotlib'
     ]
 )
