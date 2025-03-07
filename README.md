@@ -74,4 +74,4 @@ The viz feature:
 
 * plots and saves the graph as a PNG image
 
-to visualize the BDN terms and their relationships.
+to visualize the BDN terms and the relationships between them.
