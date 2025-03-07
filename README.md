@@ -66,4 +66,12 @@ python bdn2csv.py --path2id "./Response.json" "./path-id.csv"
 
 ### viz
 
-The viz feature visualizes the BDN term relationships as a directed graph.
+The viz feature:
+
+* constructs a directed graph with:
+  - vertices corresponding to terms and
+  - edges corresponding to term relationships,
+
+* plots and saves the graph as a PNG image
+
+to visualize the BDN terms and their relationships.
