@@ -63,3 +63,7 @@ Example of usage as a CLI:
 cd bdn2csv
 python bdn2csv.py --path2id "./Response.json" "./path-id.csv"
 ```
+
+### viz
+
+The viz feature visualizes the BDN term relationships as a directed graph.
