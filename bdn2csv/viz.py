@@ -49,10 +49,3 @@ class BDN:
         G = self.G
         nx.draw_networkx(G)
         plt.savefig(png_path)
-
-#dev
-csv_path = "/workspaces/bdn2csv/data/Import.csv"
-bdn = BDN(csv_path)
-print(bdn.G)
-png_path = "/workspaces/bdn2csv/data/viz.png"
-bdn.visualize(png_path)
