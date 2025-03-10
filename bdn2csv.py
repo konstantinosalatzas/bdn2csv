@@ -24,15 +24,16 @@ out_path = args.out_path
 if (not args.path2id) and (not args.viz):
     bdn2csv.convert(in_path, out_path)
     df = pd.read_csv(out_path)
+    if args.verbose:
+        print(df.head())
 
 # path2id
 if args.path2id:
     df = bdn2csv.path2id(in_path)
     df.to_csv(out_path, index=False)
+    if args.verbose:
+        print(df.head())
 
 # viz
 if args.viz:
     bdn2csv.visualize(in_path, out_path)
-
-if args.verbose:
-    print(df.head())
