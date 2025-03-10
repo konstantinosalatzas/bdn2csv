@@ -13,7 +13,6 @@ parser.add_argument("out_path", type=str,
 parser.add_argument("--path2id", action="store_true")
 parser.add_argument("-v", "--verbose", action="store_true",
                     help="activate output verbosity")
-
 parser.add_argument("--viz", action="store_true")
 
 args = parser.parse_args()
