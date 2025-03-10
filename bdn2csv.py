@@ -35,7 +35,7 @@ if args.path2id:
 
 # viz
 if args.viz:
-    pass
+    bdn2csv.visualize(in_path, out_path)
 
 if args.verbose:
     print(df.head())
