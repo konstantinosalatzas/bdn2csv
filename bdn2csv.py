@@ -21,7 +21,7 @@ in_path = args.in_path
 out_path = args.out_path
 
 # convert
-if not args.path2id:
+if (not args.path2id) and (not args.viz):
     bdn2csv.convert(in_path, out_path)
     df = pd.read_csv(out_path)
 
