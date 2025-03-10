@@ -83,3 +83,5 @@ import bdn2csv
 
 bdn2csv.visualize(csv_path="./Import.csv", png_path="./viz.png")
 ```
+
+(An example is also included in the [example.ipynb](https://github.com/konstantinosalatzas/bdn2csv/blob/main/example.ipynb))
