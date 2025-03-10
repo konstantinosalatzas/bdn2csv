@@ -15,8 +15,6 @@ parser.add_argument("-v", "--verbose", action="store_true",
                     help="activate output verbosity")
 
 parser.add_argument("--viz", action="store_true")
-parser.add_argument("-v", "--verbose", action="store_true",
-                    help="activate output verbosity")
 
 args = parser.parse_args()
 
