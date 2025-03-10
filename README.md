@@ -74,4 +74,12 @@ The viz feature:
 
 * plots and saves the graph as a PNG image
 
-to visualize the BDN terms and their relationships.
+to visualize the BDN terms and the relationships between them.
+
+Example of usage:
+
+```py
+import bdn2csv
+
+bdn2csv.visualize(csv_path="./Import.csv", png_path="./viz.png")
+```
