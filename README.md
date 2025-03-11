@@ -61,7 +61,7 @@ Example of usage as a CLI:
 
 ```sh
 cd bdn2csv
-python bdn2csv.py --path2id "./Response.json" "./path-id.csv"
+python bdn2csv.py --path2id "./Response.json" "./path2id.csv"
 ```
 
 ### viz
