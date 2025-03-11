@@ -14,7 +14,7 @@ def get_related_term_label(related_term: str) -> str:
     related_term_label = related_term.split("|")[1] if "|" in related_term else "" # if related term has label
     return related_term_label
 
-class G_BDN:
+class BDNx:
     def __init__(self, csv_path: str):
         self.G = nx.DiGraph() # BDN as a directed graph
         self.df = pd.read_csv(csv_path) # BDN DataFrame representation
@@ -46,7 +46,7 @@ class G_BDN:
                     G.add_edge(related_term_path, term['Path'], label=related_term_label)
 
 def visualize(csv_path: str, png_path: str):
-    bdn = G_BDN(csv_path)
+    bdn = BDNx(csv_path)
     G = bdn.G
     nx.draw_networkx(G)
     plt.savefig(png_path)
