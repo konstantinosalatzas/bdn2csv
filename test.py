@@ -294,7 +294,8 @@ class TestPath2Id(unittest.TestCase):
         self.assertEqual(len(df_cmp.index), 0)
 
 class TestViz(unittest.TestCase):
-    pass
+    def test_construct(self):
+        pass
 
 if __name__ == "__main__":
     unittest.main()
