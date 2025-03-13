@@ -297,5 +297,14 @@ class TestViz(unittest.TestCase):
     def test_construct(self):
         pass
 
+    def test_get_parent_path(self):
+        pass
+
+    def test_get_related_term_path(self):
+        pass
+
+    def test_get_related_term_label(self):
+        pass
+
 if __name__ == "__main__":
     unittest.main()
