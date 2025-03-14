@@ -297,7 +297,7 @@ class TestViz(unittest.TestCase):
     def test_construct(self):
         pass
 
-    def test_get_parent_path_child(self):
+    def test_get_parent_path_for_child(self):
         term_path = "Warehouse\\Section"
         parent_path_ans = "Warehouse"
 
@@ -305,7 +305,7 @@ class TestViz(unittest.TestCase):
 
         self.assertEqual(parent_path_out, parent_path_ans)
 
-    def test_get_parent_path_root(self):
+    def test_get_parent_path_for_root(self):
         term_path = "Warehouse"
         parent_path_ans = ""
 
