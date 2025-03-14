@@ -337,5 +337,13 @@ class TestViz(unittest.TestCase):
 
         self.assertEqual(related_term_label_out, related_term_label_ans)
 
+    def test_get_related_term_label_without_label(self):
+        related_term = "Warehouse\\Loading Dock"
+        related_term_label_ans = ""
+        
+        related_term_label_out = bdn2csv.get_related_term_label(related_term)
+
+        self.assertEqual(related_term_label_out, related_term_label_ans)
+
 if __name__ == "__main__":
     unittest.main()
