@@ -329,7 +329,7 @@ class TestViz(unittest.TestCase):
 
         self.assertEqual(related_term_path_out, related_term_path_ans)
 
-    def test_get_related_term_label(self):
+    def test_get_related_term_label_with_label(self):
         related_term = "Warehouse\\Loading Dock|Picking"
         related_term_label_ans = "Picking"
         
