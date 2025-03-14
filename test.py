@@ -298,7 +298,12 @@ class TestViz(unittest.TestCase):
         pass
 
     def test_get_parent_path(self):
-        pass
+        term_path = "Warehouse\\Section"
+        parent_path_out = "Warehouse"
+
+        parent_path_ans = bdn2csv.get_parent_path(term_path)
+
+        self.assertEqual(parent_path_out, parent_path_ans)
 
     def test_get_related_term_path(self):
         pass
