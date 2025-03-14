@@ -322,7 +322,12 @@ class TestViz(unittest.TestCase):
         self.assertEqual(related_term_path_out, related_term_path_ans)
 
     def test_get_related_term_path_without_label(self):
-        pass
+        related_term = "Warehouse\\Loading Dock"
+        related_term_path_ans = "Warehouse\\Loading Dock"
+        
+        related_term_path_out = bdn2csv.get_related_term_path(related_term)
+
+        self.assertEqual(related_term_path_out, related_term_path_ans)
 
     def test_get_related_term_label(self):
         pass
