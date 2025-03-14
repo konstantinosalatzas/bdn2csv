@@ -305,6 +305,9 @@ class TestViz(unittest.TestCase):
 
         self.assertEqual(parent_path_out, parent_path_ans)
 
+    def test_get_parent_path_root(self):
+        pass
+
     def test_get_related_term_path(self):
         pass
 
