@@ -321,6 +321,9 @@ class TestViz(unittest.TestCase):
 
         self.assertEqual(related_term_path_out, related_term_path_ans)
 
+    def test_get_related_term_path_without_label(self):
+        pass
+
     def test_get_related_term_label(self):
         pass
 
