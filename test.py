@@ -306,7 +306,12 @@ class TestViz(unittest.TestCase):
         self.assertEqual(parent_path_out, parent_path_ans)
 
     def test_get_parent_path_root(self):
-        pass
+        term_path = "Warehouse"
+        parent_path_ans = ""
+
+        parent_path_out = bdn2csv.get_parent_path(term_path)
+
+        self.assertEqual(parent_path_out, parent_path_ans)
 
     def test_get_related_term_path(self):
         pass
