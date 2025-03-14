@@ -297,7 +297,7 @@ class TestViz(unittest.TestCase):
     def test_construct(self):
         pass
 
-    def test_get_parent_path_for_child(self):
+    def test_get_parent_path_for_leaf(self):
         term_path = "Warehouse\\Section"
         parent_path_ans = "Warehouse"
 
