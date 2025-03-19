@@ -297,7 +297,7 @@ class TestViz(unittest.TestCase):
     def test_construct(self):
         df = pd.DataFrame()
         bdn = bdn2csv.BDNx(df)
-        pass
+        pass # check BDN graph
 
     def test_get_parent_path_for_leaf(self):
         term_path = "Warehouse\\Section"
