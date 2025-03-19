@@ -46,7 +46,8 @@ class BDNx:
                     G.add_edge(related_term_path, term['Path'], label=related_term_label)
 
 def visualize(csv_path: str, png_path: str):
-    bdn = BDNx(csv_path)
+    df = pd.read_csv(csv_path)
+    bdn = BDNx(df)
     G = bdn.G
     nx.draw_networkx(G)
     plt.savefig(png_path)
