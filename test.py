@@ -294,7 +294,7 @@ class TestPath2Id(unittest.TestCase):
         self.assertEqual(len(df_cmp.index), 0)
 
 class TestViz(unittest.TestCase):
-    def test_construct():
+    def test_construct(self):
         pass
 
     def test_get_parent_path_for_leaf(self):
