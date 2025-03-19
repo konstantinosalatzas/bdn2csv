@@ -294,6 +294,9 @@ class TestPath2Id(unittest.TestCase):
         self.assertEqual(len(df_cmp.index), 0)
 
 class TestViz(unittest.TestCase):
+    def test_construct():
+        pass
+
     def test_get_parent_path_for_leaf(self):
         term_path = "Warehouse\\Section"
         parent_path_ans = "Warehouse"
