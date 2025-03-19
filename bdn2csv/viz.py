@@ -15,9 +15,9 @@ def get_related_term_label(related_term: str) -> str:
     return related_term_label
 
 class BDNx:
-    def __init__(self, csv_path: str):
+    def __init__(self, df: pd.DataFrame):
         self.G = nx.DiGraph() # BDN as a directed graph
-        self.df = pd.read_csv(csv_path) # BDN DataFrame representation
+        self.df = df # BDN DataFrame representation
         self.construct()
 
     def construct(self):
