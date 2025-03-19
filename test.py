@@ -296,6 +296,7 @@ class TestPath2Id(unittest.TestCase):
 class TestViz(unittest.TestCase):
     def test_construct(self):
         df = pd.DataFrame()
+        bdn = bdn2csv.BDNx(df)
         pass
 
     def test_get_parent_path_for_leaf(self):
