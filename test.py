@@ -293,5 +293,54 @@ class TestPath2Id(unittest.TestCase):
         df_cmp = df_out.compare(df_ans)
         self.assertEqual(len(df_cmp.index), 0)
 
+class TestViz(unittest.TestCase):
+    def test_get_parent_path_for_leaf(self):
+        term_path = "Warehouse\\Section"
+        parent_path_ans = "Warehouse"
+
+        parent_path_out = bdn2csv.get_parent_path(term_path)
+
+        self.assertEqual(parent_path_out, parent_path_ans)
+
+    def test_get_parent_path_for_root(self):
+        term_path = "Warehouse"
+        parent_path_ans = ""
+
+        parent_path_out = bdn2csv.get_parent_path(term_path)
+
+        self.assertEqual(parent_path_out, parent_path_ans)
+
+    def test_get_related_term_path_with_label(self):
+        related_term = "Warehouse\\Loading Dock|Picking"
+        related_term_path_ans = "Warehouse\\Loading Dock"
+        
+        related_term_path_out = bdn2csv.get_related_term_path(related_term)
+
+        self.assertEqual(related_term_path_out, related_term_path_ans)
+
+    def test_get_related_term_path_without_label(self):
+        related_term = "Warehouse\\Loading Dock"
+        related_term_path_ans = "Warehouse\\Loading Dock"
+        
+        related_term_path_out = bdn2csv.get_related_term_path(related_term)
+
+        self.assertEqual(related_term_path_out, related_term_path_ans)
+
+    def test_get_related_term_label_with_label(self):
+        related_term = "Warehouse\\Loading Dock|Picking"
+        related_term_label_ans = "Picking"
+        
+        related_term_label_out = bdn2csv.get_related_term_label(related_term)
+
+        self.assertEqual(related_term_label_out, related_term_label_ans)
+
+    def test_get_related_term_label_without_label(self):
+        related_term = "Warehouse\\Loading Dock"
+        related_term_label_ans = ""
+        
+        related_term_label_out = bdn2csv.get_related_term_label(related_term)
+
+        self.assertEqual(related_term_label_out, related_term_label_ans)
+
 if __name__ == "__main__":
     unittest.main()
