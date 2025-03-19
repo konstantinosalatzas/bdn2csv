@@ -295,6 +295,7 @@ class TestPath2Id(unittest.TestCase):
 
 class TestViz(unittest.TestCase):
     def test_construct(self):
+        df = pd.DataFrame()
         pass
 
     def test_get_parent_path_for_leaf(self):
