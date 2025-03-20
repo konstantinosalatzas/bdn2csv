@@ -295,7 +295,18 @@ class TestPath2Id(unittest.TestCase):
 
 class TestViz(unittest.TestCase):
     def test_construct(self):
-        df = pd.DataFrame()
+        df = pd.DataFrame(
+            {"Name": ["Warehouse", "Loading Dock", "Section"],
+             "Path": ["Warehouse", "Warehouse\\Loading Dock", "Warehouse\\Section"],
+             "Description": ["Storage facility for goods and raw materials", "Facility for incoming and outgoing goods", "Section of the warehouse designated for a specific product or type of product"],
+             "Requirements": ["Must meet size and security standards", "", "Must be secure and accessible"],
+             "Status": ["Not Specified", "Not Specified", "Not Specified"],
+             "Importance": ["Medium", "Medium", "Medium"],
+             "Type": ["Root", "Leaf", "Leaf"],
+             "Type.1": ["Test", "Test", "Test"],
+             "Tags": ["Logistics", "", "Logistics"],
+             "Related Terms": ["", "", "Picking|Picking,Warehouse\\Loading Dock"]}
+        ) # input DataFrame
         bdn = bdn2csv.BDNx(df)
         pass # check BDN graph
 
