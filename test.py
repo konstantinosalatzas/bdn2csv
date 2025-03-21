@@ -319,7 +319,6 @@ class TestViz(unittest.TestCase):
             dict_out[v] = []
             for u in adj[v]:
                 dict_out[v].append(u)
-                print(v, dict_out[v])
         
         self.assertDictEqual(dict_out, dict_ans)
 
