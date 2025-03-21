@@ -307,7 +307,9 @@ class TestViz(unittest.TestCase):
              "Tags": ["Logistics", "", "Logistics"],
              "Related Terms": ["", "", "Picking|Picking,Warehouse\\Loading Dock"]}
         ) # input DataFrame
-        dict_ans = {}
+        dict_ans = {"Warehouse": ["Warehouse\\Loading Dock", "Warehouse\\Section"],
+                    "Warehouse\\Loading Dock": ["Warehouse\\Section"],
+                    "Warehouse\\Section": ["Warehouse\\Loading Dock"]}
 
         bdn = bdn2csv.BDNx(df)
         G = bdn.G
@@ -317,6 +319,7 @@ class TestViz(unittest.TestCase):
             dict_out[v] = []
             for u in adj[v]:
                 dict_out[v].append(u)
+                print(v, dict_out[v])
 
     def test_get_parent_path_for_leaf(self):
         term_path = "Warehouse\\Section"
