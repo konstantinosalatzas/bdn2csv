@@ -316,7 +316,6 @@ class TestViz(unittest.TestCase):
             dict_out[v] = []
             for u in adj[v]:
                 dict_out[v].append(u)
-            print(v, dict_out[v])
 
     def test_get_parent_path_for_leaf(self):
         term_path = "Warehouse\\Section"
