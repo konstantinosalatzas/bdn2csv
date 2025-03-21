@@ -309,7 +309,7 @@ class TestViz(unittest.TestCase):
         ) # input DataFrame
         dict_ans = {"Warehouse": ["Warehouse\\Loading Dock", "Warehouse\\Section"],
                     "Warehouse\\Loading Dock": ["Warehouse\\Section"],
-                    "Warehouse\\Section": ["Warehouse\\Loading Dock"]}
+                    "Warehouse\\Section": ["Warehouse\\Loading Dock"]} # expected adjacency dictionary
 
         bdn = bdn2csv.BDNx(df)
         G = bdn.G
