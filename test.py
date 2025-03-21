@@ -309,8 +309,14 @@ class TestViz(unittest.TestCase):
         ) # input DataFrame
 
         bdn = bdn2csv.BDNx(df)
-        G_out = bdn.G
-        print(G_out)
+        G = bdn.G
+        adj = G.adj
+        dict_out = {}
+        for v in adj:
+            dict_out[v] = []
+            for u in adj[v]:
+                dict_out[v].append(u)
+            print(v, dict_out[v])
 
     def test_get_parent_path_for_leaf(self):
         term_path = "Warehouse\\Section"
