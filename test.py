@@ -294,6 +294,34 @@ class TestPath2Id(unittest.TestCase):
         self.assertEqual(len(df_cmp.index), 0)
 
 class TestViz(unittest.TestCase):
+    def test_construct(self):
+        df = pd.DataFrame(
+            {"Name": ["Warehouse", "Loading Dock", "Section"],
+             "Path": ["Warehouse", "Warehouse\\Loading Dock", "Warehouse\\Section"],
+             "Description": ["Storage facility for goods and raw materials", "Facility for incoming and outgoing goods", "Section of the warehouse designated for a specific product or type of product"],
+             "Requirements": ["Must meet size and security standards", "", "Must be secure and accessible"],
+             "Status": ["Not Specified", "Not Specified", "Not Specified"],
+             "Importance": ["Medium", "Medium", "Medium"],
+             "Type": ["Root", "Leaf", "Leaf"],
+             "Type.1": ["Test", "Test", "Test"],
+             "Tags": ["Logistics", "", "Logistics"],
+             "Related Terms": ["", "", "Picking|Picking,Warehouse\\Loading Dock"]}
+        ) # input DataFrame
+        dict_ans = {"Warehouse": ["Warehouse\\Loading Dock", "Warehouse\\Section"],
+                    "Warehouse\\Loading Dock": ["Warehouse\\Section"],
+                    "Warehouse\\Section": ["Warehouse\\Loading Dock"]} # expected adjacency dictionary
+
+        bdn = bdn2csv.BDNx(df)
+        G = bdn.G
+        adj = G.adj
+        dict_out = {} # output adjacency dictionary
+        for v in adj:
+            dict_out[v] = []
+            for u in adj[v]:
+                dict_out[v].append(u)
+        
+        self.assertDictEqual(dict_out, dict_ans)
+
     def test_get_parent_path_for_leaf(self):
         term_path = "Warehouse\\Section"
         parent_path_ans = "Warehouse"
