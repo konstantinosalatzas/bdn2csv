@@ -320,6 +320,8 @@ class TestViz(unittest.TestCase):
             for u in adj[v]:
                 dict_out[v].append(u)
                 print(v, dict_out[v])
+        
+        self.assertDictEqual(dict_out, dict_ans)
 
     def test_get_parent_path_for_leaf(self):
         term_path = "Warehouse\\Section"
