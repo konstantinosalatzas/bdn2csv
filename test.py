@@ -307,8 +307,10 @@ class TestViz(unittest.TestCase):
              "Tags": ["Logistics", "", "Logistics"],
              "Related Terms": ["", "", "Picking|Picking,Warehouse\\Loading Dock"]}
         ) # input DataFrame
+
         bdn = bdn2csv.BDNx(df)
-        pass # check BDN graph
+        G_out = bdn.G
+        print(G_out)
 
     def test_get_parent_path_for_leaf(self):
         term_path = "Warehouse\\Section"
