@@ -307,6 +307,7 @@ class TestViz(unittest.TestCase):
              "Tags": ["Logistics", "", "Logistics"],
              "Related Terms": ["", "", "Picking|Picking,Warehouse\\Loading Dock"]}
         ) # input DataFrame
+        dict_ans = {}
 
         bdn = bdn2csv.BDNx(df)
         G = bdn.G
