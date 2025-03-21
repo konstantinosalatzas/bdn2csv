@@ -311,7 +311,7 @@ class TestViz(unittest.TestCase):
         bdn = bdn2csv.BDNx(df)
         G = bdn.G
         adj = G.adj
-        dict_out = {}
+        dict_out = {} # output adjacency dictionary
         for v in adj:
             dict_out[v] = []
             for u in adj[v]:
