@@ -38,3 +38,4 @@ if args.path2id:
 # viz
 if args.viz:
     bdn2csv.visualize(in_path, out_path)
+    print(out_path)
