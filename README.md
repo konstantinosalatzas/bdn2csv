@@ -33,7 +33,7 @@ Example:
 
 ```sh
 cd bdn2csv
-python bdn2csv.py "./Export.xml" "./Import.csv"
+python bdn2csv.py ./Export.xml ./Import.csv
 ```
 
 ## Installation
@@ -61,7 +61,7 @@ Example of usage as a CLI:
 
 ```sh
 cd bdn2csv
-python bdn2csv.py --path2id "./Response.json" "./path2id.csv"
+python bdn2csv.py --path2id ./Response.json ./path2id.csv
 ```
 
 ### viz
