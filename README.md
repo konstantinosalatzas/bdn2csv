@@ -1,6 +1,6 @@
 # bdn2csv
 
-bdn2csv is a Python parser that converts SAS Business Data Network (BDN) XML Export file to CSV Import file
+bdn2csv is a Python parser that converts SAS Business Data Network (BDN) [XML Export file](https://documentation.sas.com/doc/en/dmbdncdc/3.3/dmbdnug/p1i96sdnpsi8nfn1gvk7xwgq523f.htm) to [CSV Import file](https://documentation.sas.com/doc/en/dmbdncdc/3.3/dmbdnug/n0dea2xoblxbprn0z40drf6zadtr.htm)
 
 As the SAS BDN can be:
 
@@ -52,7 +52,7 @@ python -m pip install bdn2csv
 
 The path2id feature:
 
-* parses SAS BDN REST API GET /terms response JSON and
+* parses SAS BDN REST API [GET /terms](https://support.sas.com/documentation/onlinedoc/dmbdn/HTML/Default.htm#Resources.html%3FTocPath%3D_____3) response JSON and
 * computes the one-to-one mapping between term paths and ids
 
 to construct a CSV file with term path and id as columns, each row corresponding to a term.
