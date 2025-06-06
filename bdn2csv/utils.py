@@ -4,7 +4,7 @@ class bdn_dict:
     def __init__(self, df: pd.DataFrame, key: str) -> dict[str, pd.Series]:
         self.key_to_row = {row[key]: row for _, row in df.iterrows()}
 
-    def look_up(self):
+    def look_up(self) -> pd.Series:
         pass
 
 class bdn_set:
