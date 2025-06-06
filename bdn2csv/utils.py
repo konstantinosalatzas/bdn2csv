@@ -5,3 +5,9 @@ def look_up_dict():
 
 def is_in_set():
     pass
+
+class lookup_dict(dict):
+    pass
+
+class isis_set(set):
+    pass
