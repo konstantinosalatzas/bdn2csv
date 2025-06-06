@@ -8,10 +8,3 @@ class bdn_dict:
         key_to_row = self.key_to_row
         row = key_to_row.get(key, pd.Series(dtype='float64'))
         return row
-
-class bdn_set:
-    def __init__(self, df: pd.DataFrame, key: str) -> set[str]:
-        self.keys = set(df[key])
-
-    def is_in(self) -> bool:
-        pass
