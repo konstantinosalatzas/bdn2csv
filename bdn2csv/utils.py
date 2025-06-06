@@ -1,13 +1,9 @@
 import pandas as pd
 
-def look_up_dict():
-    pass
-
-def is_in_set():
-    pass
-
 class lookup_dict(dict):
-    pass
+    def lookup(self):
+        pass
 
-class isis_set(set):
-    pass
+class isin_set(set):
+    def isin(self):
+        pass
