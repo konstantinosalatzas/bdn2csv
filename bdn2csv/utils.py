@@ -11,5 +11,5 @@ class bdn_set:
     def __init__(self, df: pd.DataFrame, key: str) -> set[str]:
         self.keys = set(df[key])
 
-    def is_in(self):
+    def is_in(self) -> bool:
         pass
