@@ -1,7 +1,7 @@
 import pandas as pd
 
 class bdn_key_to_value:
-    def __init__(self):
+    def __init__(self, df: pd.DataFrame, key: str) -> dict:
         pass
 
     def look_up(self):
