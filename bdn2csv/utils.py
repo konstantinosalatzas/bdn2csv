@@ -4,12 +4,12 @@ class bdn_key_to_value:
     def __init__(self):
         pass
 
-    def lookup(self):
+    def look_up(self):
         pass
 
 class bdn_set:
     def __init__(self):
         pass
 
-    def isin(self):
+    def is_in(self):
         pass
