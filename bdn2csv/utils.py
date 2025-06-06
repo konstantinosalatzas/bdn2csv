@@ -1,6 +1,6 @@
 import pandas as pd
 
-class bdn_key_to_value:
+class bdn_dict:
     def __init__(self, df: pd.DataFrame, key: str) -> dict:
         pass
 
