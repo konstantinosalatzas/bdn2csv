@@ -370,5 +370,9 @@ class TestViz(unittest.TestCase):
 
         self.assertEqual(related_term_label_out, related_term_label_ans)
 
+class TestUtils(unittest.TestCase):
+    def test_lookup(self):
+        pass
+
 if __name__ == "__main__":
     unittest.main()
