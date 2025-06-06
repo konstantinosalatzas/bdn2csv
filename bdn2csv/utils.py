@@ -8,7 +8,7 @@ class bdn_key_to_value:
         pass
 
 class bdn_set:
-    def __init__(self):
+    def __init__(self, df: pd.DataFrame, key: str) -> set:
         pass
 
     def is_in(self):
