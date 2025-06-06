@@ -9,7 +9,7 @@ class bdn_dict:
 
 class bdn_set:
     def __init__(self, df: pd.DataFrame, key: str) -> set[str]:
-        pass
+        self.keys = set(df[key])
 
     def is_in(self):
         pass
