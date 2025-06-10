@@ -388,7 +388,7 @@ class TestUtils(unittest.TestCase):
 
     def test_lookup(self):
         df_dict = self.df_dict
-        row = df_dict.lookup('Warehouse\\Loading Dock')
+        row = df_dict.lookup('Warehouse\\Loading Dock') # output Series
         print(row)
         pass
 
