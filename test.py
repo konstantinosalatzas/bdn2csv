@@ -387,7 +387,18 @@ class TestUtils(unittest.TestCase):
         self.df_dict = bdn2csv.BDN_dict(df, key='Path')
 
     def test_lookup(self):
-        row_ans = pd.Series() # expected Series
+        row_ans = pd.Series(
+            {"Name": "Loading Dock",
+             "Path": "Warehouse\\Loading Dock",
+             "Description": "Facility for incoming and outgoing goods",
+             "Requirements": "",
+             "Status": "Not Specified",
+             "Importance": "Medium",
+             "Type": "Leaf",
+             "Type.1": "Test",
+             "Tags": "",
+             "Related Terms": ""}
+        ) # expected Series
 
         df_dict = self.df_dict
         row_out = df_dict.lookup('Warehouse\\Loading Dock') # output Series
