@@ -388,6 +388,7 @@ class TestUtils(unittest.TestCase):
 
     def test_lookup(self):
         df_dict = self.df_dict
+        row_ans = pd.Series()
         row_out = df_dict.lookup('Warehouse\\Loading Dock') # output Series
 
 if __name__ == "__main__":
