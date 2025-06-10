@@ -386,7 +386,7 @@ class TestUtils(unittest.TestCase):
         ) # input DataFrame
         self.df_dict = bdn2csv.BDN_dict(df, key='Path')
 
-    def test_lookup(self):
+    def test_lookup_exists(self):
         row_ans = pd.Series(
             {"Name": "Loading Dock",
              "Path": "Warehouse\\Loading Dock",
