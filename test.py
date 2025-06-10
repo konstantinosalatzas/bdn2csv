@@ -387,8 +387,9 @@ class TestUtils(unittest.TestCase):
         self.df_dict = bdn2csv.BDN_dict(df, key='Path')
 
     def test_lookup(self):
+        row_ans = pd.Series() # expected Series
+
         df_dict = self.df_dict
-        row_ans = pd.Series()
         row_out = df_dict.lookup('Warehouse\\Loading Dock') # output Series
 
 if __name__ == "__main__":
