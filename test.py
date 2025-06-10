@@ -406,7 +406,7 @@ class TestUtils(unittest.TestCase):
         row_cmp = row_out.compare(row_ans)
         self.assertEqual(len(row_cmp.index), 0)
 
-    def test_lookup_no_exists(self):
+    def test_lookup_not_exists(self):
         row_ans = pd.Series(dtype='float64') # expected Series
 
         df_dict = self.df_dict
