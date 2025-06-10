@@ -387,6 +387,9 @@ class TestUtils(unittest.TestCase):
         self.df_dict = bdn2csv.BDN_dict(df, key='Path')
 
     def test_lookup(self):
+        df_dict = self.df_dict
+        row = df_dict.lookup('Warehouse\\Loading Dock')
+        print(row)
         pass
 
 if __name__ == "__main__":
