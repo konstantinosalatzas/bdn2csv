@@ -371,6 +371,9 @@ class TestViz(unittest.TestCase):
         self.assertEqual(related_term_label_out, related_term_label_ans)
 
 class TestUtils(unittest.TestCase):
+    def setUp(self):
+        pass
+
     def test_lookup(self):
         pass
 
