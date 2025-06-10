@@ -403,5 +403,8 @@ class TestUtils(unittest.TestCase):
         df_dict = self.df_dict
         row_out = df_dict.lookup('Warehouse\\Loading Dock') # output Series
 
+        row_cmp = row_out.compare(row_ans)
+        self.assertEqual(len(row_cmp.index), 0)
+
 if __name__ == "__main__":
     unittest.main()
