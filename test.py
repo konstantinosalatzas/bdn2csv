@@ -384,7 +384,7 @@ class TestUtils(unittest.TestCase):
              "Tags": ["Logistics", "", "Logistics"],
              "Related Terms": ["", "", "Picking|Picking,Warehouse\\Loading Dock"]}
         ) # input DataFrame
-        pass
+        self.df_dict = bdn2csv.BDN_dict(df, key='Path')
 
     def test_lookup(self):
         pass
