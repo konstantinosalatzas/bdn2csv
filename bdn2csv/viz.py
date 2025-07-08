@@ -1,4 +1,4 @@
-from bdn2csv.viz import get_parent_path, get_related_term_path, get_related_term_label
+from bdn2csv.utils import get_parent_path, get_related_term_path, get_related_term_label
 import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
