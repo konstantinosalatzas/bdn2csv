@@ -322,6 +322,51 @@ class TestViz(unittest.TestCase):
         
         self.assertDictEqual(dict_out, dict_ans)
 
+class TestUtils(unittest.TestCase):
+    def setUp(self):
+        df = pd.DataFrame(
+            {"Name": ["Warehouse", "Loading Dock", "Section"],
+             "Path": ["Warehouse", "Warehouse\\Loading Dock", "Warehouse\\Section"],
+             "Description": ["Storage facility for goods and raw materials", "Facility for incoming and outgoing goods", "Section of the warehouse designated for a specific product or type of product"],
+             "Requirements": ["Must meet size and security standards", "", "Must be secure and accessible"],
+             "Status": ["Not Specified", "Not Specified", "Not Specified"],
+             "Importance": ["Medium", "Medium", "Medium"],
+             "Type": ["Root", "Leaf", "Leaf"],
+             "Type.1": ["Test", "Test", "Test"],
+             "Tags": ["Logistics", "", "Logistics"],
+             "Related Terms": ["", "", "Picking|Picking,Warehouse\\Loading Dock"]}
+        ) # input DataFrame
+        self.df_dict = bdn2csv.BDN_dict(df, key='Path')
+
+    def test_lookup_exists(self):
+        row_ans = pd.Series(
+            {"Name": "Loading Dock",
+             "Path": "Warehouse\\Loading Dock",
+             "Description": "Facility for incoming and outgoing goods",
+             "Requirements": "",
+             "Status": "Not Specified",
+             "Importance": "Medium",
+             "Type": "Leaf",
+             "Type.1": "Test",
+             "Tags": "",
+             "Related Terms": ""}
+        ) # expected Series
+
+        df_dict = self.df_dict
+        row_out = df_dict.lookup('Warehouse\\Loading Dock') # output Series
+
+        row_cmp = row_out.compare(row_ans)
+        self.assertEqual(len(row_cmp.index), 0)
+
+    def test_lookup_not_exists(self):
+        row_ans = pd.Series(dtype='float64') # expected Series
+
+        df_dict = self.df_dict
+        row_out = df_dict.lookup('Warehouse\\Test') # output Series
+
+        row_cmp = row_out.compare(row_ans)
+        self.assertEqual(len(row_cmp.index), 0)
+
     def test_get_parent_path_for_leaf(self):
         term_path = "Warehouse\\Section"
         parent_path_ans = "Warehouse"
@@ -369,51 +414,6 @@ class TestViz(unittest.TestCase):
         related_term_label_out = bdn2csv.get_related_term_label(related_term)
 
         self.assertEqual(related_term_label_out, related_term_label_ans)
-
-class TestUtils(unittest.TestCase):
-    def setUp(self):
-        df = pd.DataFrame(
-            {"Name": ["Warehouse", "Loading Dock", "Section"],
-             "Path": ["Warehouse", "Warehouse\\Loading Dock", "Warehouse\\Section"],
-             "Description": ["Storage facility for goods and raw materials", "Facility for incoming and outgoing goods", "Section of the warehouse designated for a specific product or type of product"],
-             "Requirements": ["Must meet size and security standards", "", "Must be secure and accessible"],
-             "Status": ["Not Specified", "Not Specified", "Not Specified"],
-             "Importance": ["Medium", "Medium", "Medium"],
-             "Type": ["Root", "Leaf", "Leaf"],
-             "Type.1": ["Test", "Test", "Test"],
-             "Tags": ["Logistics", "", "Logistics"],
-             "Related Terms": ["", "", "Picking|Picking,Warehouse\\Loading Dock"]}
-        ) # input DataFrame
-        self.df_dict = bdn2csv.BDN_dict(df, key='Path')
-
-    def test_lookup_exists(self):
-        row_ans = pd.Series(
-            {"Name": "Loading Dock",
-             "Path": "Warehouse\\Loading Dock",
-             "Description": "Facility for incoming and outgoing goods",
-             "Requirements": "",
-             "Status": "Not Specified",
-             "Importance": "Medium",
-             "Type": "Leaf",
-             "Type.1": "Test",
-             "Tags": "",
-             "Related Terms": ""}
-        ) # expected Series
-
-        df_dict = self.df_dict
-        row_out = df_dict.lookup('Warehouse\\Loading Dock') # output Series
-
-        row_cmp = row_out.compare(row_ans)
-        self.assertEqual(len(row_cmp.index), 0)
-
-    def test_lookup_not_exists(self):
-        row_ans = pd.Series(dtype='float64') # expected Series
-
-        df_dict = self.df_dict
-        row_out = df_dict.lookup('Warehouse\\Test') # output Series
-
-        row_cmp = row_out.compare(row_ans)
-        self.assertEqual(len(row_cmp.index), 0)
 
 if __name__ == "__main__":
     unittest.main()
