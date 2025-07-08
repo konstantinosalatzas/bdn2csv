@@ -1,5 +1,4 @@
 from bdn2csv.BDN import BDN
-import pandas as pd
 
 def convert(xml_path: str, csv_path: str):
     csv_name = csv_path.split("/")[-1].split(".")[0]
