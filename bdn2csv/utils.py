@@ -28,4 +28,6 @@ class BDN_dict:
 
 def check_dag_and_find_cycles(g: nx.Graph):
     is_dag = nx.is_directed_acyclic_graph(g) # check if the graph is a DAG
-    pass
+    if not is_dag: # the graph contains at least 1 cycle
+        cycles = nx.recursive_simple_cycles(g)
+        pass
