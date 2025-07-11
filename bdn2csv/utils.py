@@ -26,6 +26,7 @@ class BDN_dict:
         row = key_to_row.get(key, pd.Series(dtype='float64'))
         return row
 
+# Utility function to check if a graph is a DAG and find its cycles
 def check_dag_and_find_cycles(g: nx.Graph):
     is_dag = nx.is_directed_acyclic_graph(g) # check if the graph is a DAG
     if not is_dag: # the graph contains at least 1 cycle
