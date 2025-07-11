@@ -422,5 +422,7 @@ class TestUtils(unittest.TestCase):
 
         cycles_out = bdn2csv.check_dag_and_find_cycles(g)
 
+        self.assertEqual(cycles_out, cycles_ans)
+
 if __name__ == "__main__":
     unittest.main()
