@@ -427,6 +427,8 @@ class TestUtils(unittest.TestCase):
     def test_check_dag_and_find_cycles(self):
         g = nx.DiGraph()
         g.add_nodes_from(["Warehouse", "Warehouse\\Loading Dock", "Warehouse\\Section"])
+        g.add_edges_from([("Warehouse", "Warehouse\\Loading Dock"), ("Warehouse", "Warehouse\\Section"),
+                          ("Warehouse\\Section", "Warehouse\\Loading Dock"), ("Warehouse\\Loading Dock", "Warehouse\\Section")])
 
 if __name__ == "__main__":
     unittest.main()
