@@ -418,6 +418,7 @@ class TestUtils(unittest.TestCase):
 
     def test_check_dag_and_find_cycles(self):
         g = nx.DiGraph()
+        cycles_ans = []
 
 if __name__ == "__main__":
     unittest.main()
