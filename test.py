@@ -417,7 +417,7 @@ class TestUtils(unittest.TestCase):
         self.assertEqual(related_term_label_out, related_term_label_ans)
 
     def test_check_dag_and_find_cycles_empty(self):
-        g = nx.DiGraph()
+        g = nx.DiGraph() # empty directed graph
         cycles_ans = []
 
         cycles_out = bdn2csv.check_dag_and_find_cycles(g)
