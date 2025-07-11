@@ -369,50 +369,50 @@ class TestUtils(unittest.TestCase):
         self.assertEqual(len(row_cmp.index), 0)
 
     def test_get_parent_path_for_leaf(self):
-        term_path = "Warehouse\\Section"
-        parent_path_ans = "Warehouse"
+        term_path = "Warehouse\\Section" # input term path
+        parent_path_ans = "Warehouse" # expected parent term path
 
-        parent_path_out = bdn2csv.get_parent_path(term_path)
+        parent_path_out = bdn2csv.get_parent_path(term_path) # output parent term path
 
         self.assertEqual(parent_path_out, parent_path_ans)
 
     def test_get_parent_path_for_root(self):
-        term_path = "Warehouse"
-        parent_path_ans = ""
+        term_path = "Warehouse" # input term path
+        parent_path_ans = "" # expected parent term path
 
-        parent_path_out = bdn2csv.get_parent_path(term_path)
+        parent_path_out = bdn2csv.get_parent_path(term_path) # output parent term path
 
         self.assertEqual(parent_path_out, parent_path_ans)
 
     def test_get_related_term_path_with_label(self):
-        related_term = "Warehouse\\Loading Dock|Picking"
-        related_term_path_ans = "Warehouse\\Loading Dock"
+        related_term = "Warehouse\\Loading Dock|Picking" # input related term with label
+        related_term_path_ans = "Warehouse\\Loading Dock" # expected related term path
         
-        related_term_path_out = bdn2csv.get_related_term_path(related_term)
+        related_term_path_out = bdn2csv.get_related_term_path(related_term) # output related term path
 
         self.assertEqual(related_term_path_out, related_term_path_ans)
 
     def test_get_related_term_path_without_label(self):
-        related_term = "Warehouse\\Loading Dock"
-        related_term_path_ans = "Warehouse\\Loading Dock"
+        related_term = "Warehouse\\Loading Dock" # input related term without label
+        related_term_path_ans = "Warehouse\\Loading Dock" # expected related term path
         
-        related_term_path_out = bdn2csv.get_related_term_path(related_term)
+        related_term_path_out = bdn2csv.get_related_term_path(related_term) # output related term path
 
         self.assertEqual(related_term_path_out, related_term_path_ans)
 
     def test_get_related_term_label_with_label(self):
-        related_term = "Warehouse\\Loading Dock|Picking"
-        related_term_label_ans = "Picking"
+        related_term = "Warehouse\\Loading Dock|Picking" # input related term with label
+        related_term_label_ans = "Picking" # expected related term label
         
-        related_term_label_out = bdn2csv.get_related_term_label(related_term)
+        related_term_label_out = bdn2csv.get_related_term_label(related_term) # output related term label
 
         self.assertEqual(related_term_label_out, related_term_label_ans)
 
     def test_get_related_term_label_without_label(self):
-        related_term = "Warehouse\\Loading Dock"
-        related_term_label_ans = ""
+        related_term = "Warehouse\\Loading Dock" # input related term without label
+        related_term_label_ans = "" # expected related term label
         
-        related_term_label_out = bdn2csv.get_related_term_label(related_term)
+        related_term_label_out = bdn2csv.get_related_term_label(related_term) # output related term label
 
         self.assertEqual(related_term_label_out, related_term_label_ans)
 
