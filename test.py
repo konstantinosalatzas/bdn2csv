@@ -1,6 +1,7 @@
 import unittest
 import bdn2csv
 import pandas as pd
+import networkx as nx
 
 class TestConvert(unittest.TestCase):
     def test_convert(self):
