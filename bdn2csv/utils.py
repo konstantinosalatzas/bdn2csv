@@ -1,4 +1,5 @@
 import pandas as pd
+import networkx as nx
 
 # Utility function to get parent term path from term path
 def get_parent_path(term_path: str) -> str:
