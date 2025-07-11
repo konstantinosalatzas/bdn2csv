@@ -27,5 +27,5 @@ class BDN_dict:
         return row
 
 def check_dag_and_find_cycles(g: nx.Graph):
-    is_dag = nx.is_directed_acyclic_graph(g)
+    is_dag = nx.is_directed_acyclic_graph(g) # check if the graph is a DAG
     pass
