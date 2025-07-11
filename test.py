@@ -420,5 +420,7 @@ class TestUtils(unittest.TestCase):
         g = nx.DiGraph()
         cycles_ans = []
 
+        cycles_out = bdn2csv.check_dag_and_find_cycles(g)
+
 if __name__ == "__main__":
     unittest.main()
