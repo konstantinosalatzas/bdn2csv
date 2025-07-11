@@ -429,6 +429,8 @@ class TestUtils(unittest.TestCase):
         g.add_nodes_from(["Warehouse", "Warehouse\\Loading Dock", "Warehouse\\Section"])
         g.add_edges_from([("Warehouse", "Warehouse\\Loading Dock"), ("Warehouse", "Warehouse\\Section"),
                           ("Warehouse\\Section", "Warehouse\\Loading Dock"), ("Warehouse\\Loading Dock", "Warehouse\\Section")])
+        
+        cycles_out = bdn2csv.check_dag_and_find_cycles(g)
 
 if __name__ == "__main__":
     unittest.main()
