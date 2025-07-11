@@ -421,9 +421,9 @@ class TestUtils(unittest.TestCase):
         g.add_nodes_from(["Warehouse", "Warehouse\\Loading Dock", "Warehouse\\Section"])
         g.add_edges_from([("Warehouse", "Warehouse\\Loading Dock"), ("Warehouse", "Warehouse\\Section"),
                           ("Warehouse\\Section", "Warehouse\\Loading Dock"), ("Warehouse\\Loading Dock", "Warehouse\\Section")])
-        cycles_ans = [["Warehouse\\Loading Dock", "Warehouse\\Section"]] 
+        cycles_ans = [["Warehouse\\Loading Dock", "Warehouse\\Section"]] # expected list
         
-        cycles_out = bdn2csv.check_dag_and_find_cycles(g)
+        cycles_out = bdn2csv.check_dag_and_find_cycles(g) # output list
 
         self.assertEqual(cycles_out, cycles_ans)
 
