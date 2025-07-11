@@ -425,7 +425,7 @@ class TestUtils(unittest.TestCase):
         self.assertEqual(cycles_out, cycles_ans)
 
     def test_check_dag_and_find_cycles(self):
-        pass
+        g = nx.DiGraph()
 
 if __name__ == "__main__":
     unittest.main()
