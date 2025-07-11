@@ -26,6 +26,6 @@ class BDN_dict:
         row = key_to_row.get(key, pd.Series(dtype='float64'))
         return row
 
-def check_dag_and_find_cycles(g):
+def check_dag_and_find_cycles(g: nx.Graph):
     is_dag = nx.is_directed_acyclic_graph(g)
     pass
