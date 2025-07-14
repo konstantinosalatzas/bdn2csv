@@ -27,7 +27,7 @@ class BDN_dict:
         return row
 
 # Utility function to check if a graph is a DAG and find its cycles
-def find_cycles(g: nx.DiGraph) -> list[list]:
+def find_cycles(g: nx.Graph) -> list[list]:
     is_dag = nx.is_directed_acyclic_graph(g) # check if the graph is a DAG
     if not is_dag: # the graph contains at least 1 cycle
         return nx.recursive_simple_cycles(g) # list of cycles
