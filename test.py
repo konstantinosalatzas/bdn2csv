@@ -416,14 +416,14 @@ class TestUtils(unittest.TestCase):
 
         self.assertEqual(related_term_label_out, related_term_label_ans)
 
-    def test_check_dag_and_find_cycles(self):
+    def test_find_cycles(self):
         g = nx.DiGraph() # directed graph
         g.add_nodes_from(["Warehouse", "Warehouse\\Loading Dock", "Warehouse\\Section"])
         g.add_edges_from([("Warehouse", "Warehouse\\Loading Dock"), ("Warehouse", "Warehouse\\Section"),
                           ("Warehouse\\Section", "Warehouse\\Loading Dock"), ("Warehouse\\Loading Dock", "Warehouse\\Section")])
         cycles_ans = [["Warehouse\\Loading Dock", "Warehouse\\Section"]] # expected list of cycles
         
-        cycles_out = bdn2csv.check_dag_and_find_cycles(g) # output list of cycles
+        cycles_out = bdn2csv.find_cycles(g) # output list of cycles
 
         self.assertEqual(cycles_out, cycles_ans)
 
