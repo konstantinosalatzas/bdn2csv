@@ -426,6 +426,17 @@ class TestUtils(unittest.TestCase):
         cycles_out = bdn2csv.find_cycles(g) # output list of cycles
 
         self.assertEqual(cycles_out, cycles_ans)
+    
+    def test_find_cycles_dag(self):
+        g = nx.DiGraph() # directed graph
+        g.add_nodes_from(["Warehouse", "Warehouse\\Loading Dock", "Warehouse\\Section"])
+        g.add_edges_from([("Warehouse", "Warehouse\\Loading Dock"), ("Warehouse", "Warehouse\\Section"),
+                          ("Warehouse\\Section", "Warehouse\\Loading Dock")])
+        cycles_ans = [] # expected list of cycles
+        
+        cycles_out = bdn2csv.find_cycles(g) # output list of cycles
+
+        self.assertEqual(cycles_out, cycles_ans)
 
 if __name__ == "__main__":
     unittest.main()
