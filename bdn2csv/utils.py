@@ -1,4 +1,5 @@
 import pandas as pd
+import networkx as nx
 
 # Utility function to get parent term path from term path
 def get_parent_path(term_path: str) -> str:
@@ -24,3 +25,10 @@ class BDN_dict:
         key_to_row = self.key_to_row
         row = key_to_row.get(key, pd.Series(dtype='float64'))
         return row
+
+# Utility function to check if a graph is a DAG and find its cycles
+def find_cycles(g: nx.Graph) -> list[list]:
+    is_dag = nx.is_directed_acyclic_graph(g) # check if the graph is a DAG
+    if not is_dag: # the graph contains at least 1 cycle
+        return nx.recursive_simple_cycles(g) # list of cycles
+    return [] # the graph is acyclic
