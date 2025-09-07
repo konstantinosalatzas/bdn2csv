@@ -3,6 +3,7 @@ import bdn2csv
 import pandas as pd
 import networkx as nx
 
+# end-to-end test
 class TestConvert(unittest.TestCase):
     def test_convert(self):
         xml_string = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -104,6 +105,8 @@ class TestConvert(unittest.TestCase):
 
         df_cmp = df_out.compare(df_ans)
         self.assertEqual(len(df_cmp.index), 0)
+
+# unit tests
 
 class TestParse(unittest.TestCase):
     def setUp(self):
