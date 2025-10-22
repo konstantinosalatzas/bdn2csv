@@ -11,6 +11,3 @@ def batch(folder_path: str):
                     convert(file.path, file.path.replace(".xml", ".csv"))
                 except Exception as error:
                     print(error)
-
-path = "data"
-batch(path)
