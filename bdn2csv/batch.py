@@ -5,7 +5,7 @@ def batch(folder_path: str):
     for file in os.scandir(folder_path):
         if file.is_file():
             if file.path.split(".")[1] == "xml":
-                convert(file.path, str(file.path).replace(".xml", ".csv"))
+                convert(file.path, file.path.replace(".xml", ".csv"))
 
 path = "data"
 batch(path)
