@@ -1,3 +1,5 @@
+"""Convert every XML file in a folder path."""
+
 from bdn2csv.convert import convert
 import os
 
