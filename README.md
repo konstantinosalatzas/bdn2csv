@@ -83,3 +83,13 @@ import bdn2csv
 
 bdn2csv.visualize(csv_path="./Import.csv", png_path="./viz.png")
 ```
+
+### batch
+
+Example of usage:
+
+```py
+import bdn2csv
+
+bdn2csv.batch(folder_path="./data")
+```
