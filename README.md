@@ -93,5 +93,5 @@ Example of usage:
 ```py
 import bdn2csv
 
-bdn2csv.batch(folder_path="./data")
+bdn2csv.batch(folder_path="data")
 ```
