@@ -83,3 +83,15 @@ import bdn2csv
 
 bdn2csv.visualize(csv_path="./Import.csv", png_path="./viz.png")
 ```
+
+### batch
+
+The batch feature converts every BDN exported XML file in a folder.
+
+Example of usage:
+
+```py
+import bdn2csv
+
+bdn2csv.batch(folder_path="data")
+```
