@@ -1,7 +1,7 @@
 import pandas as pd
 import json
 
-def id2name(response: dict) -> pd.DataFrame:
+def id2name(response: dict[str, str]) -> pd.DataFrame:
     names = [] # term names
     ids = [] # term IDs
     parentIds = [] # term parent IDs
